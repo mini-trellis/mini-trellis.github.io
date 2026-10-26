@@ -1,0 +1,22 @@
+title: mini-trellis
+description: Cross-session memory for AI coding agents.
+remote_theme: just-the-docs/just-the-docs@v0.12.0
+url: https://mini-trellis.github.io
+permalink: pretty
+search_enabled: true
+heading_anchors: true
+aux_links:
+  Repository:
+    - https://github.com/Tiger-zzZ/mini-trellis
+  npm:
+    - https://www.npmjs.com/package/mini-trellis
+aux_links_new_tab: true
+gh_edit_link: true
+gh_edit_link_text: Edit this page on GitHub
+gh_edit_repository: https://github.com/mini-trellis/mini-trellis.github.io
+gh_edit_branch: main
+gh_edit_view_mode: tree
+footer_content: 'Released under <a href="https://github.com/Tiger-zzZ/mini-trellis/blob/main/LICENSE">AGPL-3.0</a>. Original Trellis copyright Mindfold LLC.'
+exclude:
+  - README.md
+  - build_docs_site.py
