@@ -1,7 +1,7 @@
 ---
 layout: default
 title: 支持的工具
-nav_order: 5
+nav_order: 9
 parent: mini-trellis
 lang: zh
 ---

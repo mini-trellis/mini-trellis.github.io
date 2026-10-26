@@ -28,4 +28,4 @@ lang: zh
 
 以后的会话还需要这条结论时才记。已有同主题文件就改那个文件。要长期遵守的边界用 `mini-trellis-update-spec` 写进 `spec`。然后 `remember` 在日志里链到这次会话。新安装只写文件，不自动提交。
 
-一次改动里的命令顺序见[日常使用](/zh/using/)。
+一次改动里的命令顺序见[日常使用](/zh/using/)。笔记的形状见[笔记怎么写](/zh/writing-notes/)。一次查询返回什么见 [recall 会返回什么](/zh/recall/)。

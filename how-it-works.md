@@ -28,4 +28,4 @@ Run `mem recall` when the rule or the earlier decision is not in front of you. I
 
 Write a note when a later session would need it. If a file already covers the topic, edit that file. `mini-trellis-update-spec` is how a lasting boundary gets into `spec`. `remember` then links the session from the journal. New installs write the files and do not commit them.
 
-The command sequence for one change is [Day to day](/using/).
+The command sequence for one change is [Day to day](/using/). How a note is shaped is on [Writing notes](/writing-notes/). What a search returns is on [What recall returns](/recall/).

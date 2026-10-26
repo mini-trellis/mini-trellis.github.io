@@ -2,7 +2,7 @@
 layout: default
 title: 版本说明
 parent: mini-trellis
-nav_order: 8
+nav_order: 12
 lang: zh
 ---
 

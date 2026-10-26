@@ -1,7 +1,7 @@
 ---
 layout: default
 title: 参与
-nav_order: 7
+nav_order: 11
 parent: mini-trellis
 lang: zh
 ---

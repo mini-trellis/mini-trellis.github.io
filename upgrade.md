@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Upgrade
-nav_order: 3
+nav_order: 5
 lang: en
 ---
 # Upgrade

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: 从 Trellis 迁移
-nav_order: 4
+nav_order: 6
 parent: mini-trellis
 lang: zh
 ---

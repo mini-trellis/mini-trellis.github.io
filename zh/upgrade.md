@@ -2,7 +2,7 @@
 layout: default
 title: 升级
 parent: mini-trellis
-nav_order: 6
+nav_order: 10
 lang: zh
 ---
 # 升级
