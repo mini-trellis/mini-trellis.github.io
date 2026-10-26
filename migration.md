@@ -1,9 +1,12 @@
 ---
 layout: default
-title: "Migrate from Trellis"
-nav_order: 7
+title: Migrate from Trellis
+parent: mini-trellis
+nav_order: 4
 ---
 [中文](/zh/migration/)
+
+# Migrate from Trellis
 
 Trellis and mini-trellis share `.trellis/`. Use the migration command to replace the existing integration instead of installing both into the same project. Back up project knowledge and host configuration, including ignored files, before proceeding.
 

@@ -1,11 +1,13 @@
 ---
 layout: default
-title: "Supported agents"
-nav_order: 6
+title: Agents
+nav_order: 2
 ---
 [中文](/zh/agents/)
 
-Combine flags as needed (for example, `mini-trellis init -u your-name --claude --cursor`):
+# Agents
+
+Pass one flag or several (`mini-trellis init -u your-name --claude --cursor`):
 
 | Agent | Init flag | Record a session | Knowledge & history support |
 | --- | --- | --- | --- |

@@ -1,12 +1,14 @@
 ---
 layout: default
-title: "开发时怎么用"
-nav_order: 4
-parent: "中文"
+title: 日常使用
+parent: 中文
+nav_order: 3
 ---
 [English](/using/)
 
-命令在项目根目录执行。Claude Code 和 OpenCode 用 `/mini-trellis:remember`，Codex 用 `$mini-trellis-remember`，Pi 用 `/mini-trellis-remember`。DeepSeek Harness 和 Cursor 用技能 `mini-trellis-remember`。
+# 日常使用
+
+新项目的安装在[安装](/zh/install/)。命令在项目根目录执行。Claude Code 和 OpenCode 用 `/mini-trellis:remember`，Codex 用 `$mini-trellis-remember`，Pi 用 `/mini-trellis-remember`。DeepSeek Harness 和 Cursor 用技能 `mini-trellis-remember`。
 
 ## 从零安装
 

@@ -1,5 +1,5 @@
 title: mini-trellis
-description: Cross-session memory for AI coding agents.
+description: Project memory for AI coding agents. Spec, research, journals, and local transcript search.
 remote_theme: just-the-docs/just-the-docs@v0.12.0
 url: https://mini-trellis.github.io
 permalink: pretty

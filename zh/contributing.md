@@ -1,10 +1,12 @@
 ---
 layout: default
-title: "参与项目"
-nav_order: 9
-parent: "中文"
+title: 参与
+nav_order: 7
+parent: 中文
 ---
 [English](/contributing/)
+
+# 参与
 
 这是 Trellis 0.6.17 的 AGPL-3.0 公开 fork。保留 Mindfold 版权和 `COPYRIGHT` 里的修改声明。
 

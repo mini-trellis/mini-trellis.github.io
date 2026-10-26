@@ -1,10 +1,12 @@
 ---
 layout: default
-title: "从 Trellis 迁移"
-nav_order: 7
-parent: "中文"
+title: 从 Trellis 迁移
+nav_order: 4
+parent: 中文
 ---
 [English](/migration/)
+
+# 从 Trellis 迁移
 
 Trellis 与 mini-trellis 共用 `.trellis/`。已有 Trellis 的项目应通过迁移命令替换集成，避免两套指令同时生效。操作前先备份项目知识与宿主配置，包括被 Git 忽略的文件。
 

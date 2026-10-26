@@ -1,10 +1,13 @@
 ---
 layout: default
-title: "Releases"
-nav_order: 9
+title: Releases
+nav_order: 4
 has_children: true
 ---
-Version notes shipped with the repository. The current comparison against Trellis is [v0.3.1](/releases/v0.3.1/), with the full run log in [Benchmark detail](/releases/benchmark-detail/).
+
+# Releases
+
+Notes for versions that are already published. The latest comparison with Trellis is [v0.3.1](/releases/v0.3.1/). Per-run numbers are in [Benchmark detail](/releases/benchmark-detail/).
 
 - [v0.3.1](/releases/v0.3.1/)
 - [v0.3.0](/releases/v0.3.0/)
