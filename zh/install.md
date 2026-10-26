@@ -1,12 +1,10 @@
 ---
 layout: default
 title: 安装
-parent: 中文
+parent: mini-trellis
 nav_order: 1
+lang: zh
 ---
-
-[English](/install/)
-
 # 安装
 
 ```bash

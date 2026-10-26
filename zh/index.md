@@ -1,16 +1,14 @@
 ---
 layout: default
-title: 中文
-nav_order: 20
+title: mini-trellis
+nav_order: 1
 has_children: true
 permalink: /zh/
+lang: zh
 ---
-
 # mini-trellis
 
 mini-trellis 把下次会话还要找的约定、调研和开发记录写进仓库里的 Markdown。`mem recall` 同时查这些文件和这台机器上已有的 Agent 对话，先返回短摘录。
-
-[English](/)
 
 ```bash
 npm install -g mini-trellis

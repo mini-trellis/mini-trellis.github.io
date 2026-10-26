@@ -3,9 +3,8 @@ layout: default
 title: Day to day
 parent: mini-trellis
 nav_order: 3
+lang: en
 ---
-[中文](/zh/using/)
-
 # Day to day
 
 Setup for a new project is on [Install](/install/). Commands below run from the project root. The record command is `/mini-trellis:remember` in Claude Code and OpenCode, `$mini-trellis-remember` in Codex, and `/mini-trellis-remember` in Pi. DeepSeek Harness and Cursor use the `mini-trellis-remember` skill.

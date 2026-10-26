@@ -1,12 +1,10 @@
 ---
 layout: default
 title: 怎么工作
-parent: 中文
+parent: mini-trellis
 nav_order: 2
+lang: zh
 ---
-
-[English](/how-it-works/)
-
 # 怎么工作
 
 会话开始时注入一段短入口，大约 1.1k 字符。后面的轮次不再注入。改动依赖以前的决定时再查。这次会话得出一条以后还要用的规则或修复时，写进已有笔记，并记一笔会话。

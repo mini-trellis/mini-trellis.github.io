@@ -2,10 +2,9 @@
 layout: default
 title: 参与
 nav_order: 7
-parent: 中文
+parent: mini-trellis
+lang: zh
 ---
-[English](/contributing/)
-
 # 参与
 
 这是 Trellis 0.6.17 的 AGPL-3.0 公开 fork。保留 Mindfold 版权和 `COPYRIGHT` 里的修改声明。

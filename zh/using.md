@@ -1,11 +1,10 @@
 ---
 layout: default
 title: 日常使用
-parent: 中文
+parent: mini-trellis
 nav_order: 3
+lang: zh
 ---
-[English](/using/)
-
 # 日常使用
 
 新项目的安装在[安装](/zh/install/)。命令在项目根目录执行。Claude Code 和 OpenCode 用 `/mini-trellis:remember`，Codex 用 `$mini-trellis-remember`，Pi 用 `/mini-trellis-remember`。DeepSeek Harness 和 Cursor 用技能 `mini-trellis-remember`。

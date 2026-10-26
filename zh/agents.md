@@ -2,10 +2,9 @@
 layout: default
 title: 支持的工具
 nav_order: 5
-parent: 中文
+parent: mini-trellis
+lang: zh
 ---
-[English](/agents/)
-
 # 支持的工具
 
 支持单个或组合安装（例如 `mini-trellis init -u your-name --claude --cursor`）：

@@ -1,0 +1,5 @@
+{% assign nav_lang = page.lang | default: "en" %}
+{% assign lang_pages = site.html_pages | where: "lang", nav_lang %}
+<nav aria-label="Main" id="site-nav" class="site-nav">
+  {% include components/nav/pages.html pages=lang_pages %}
+</nav>

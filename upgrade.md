@@ -2,10 +2,8 @@
 layout: default
 title: Upgrade
 nav_order: 3
+lang: en
 ---
-
-[中文](/zh/upgrade/)
-
 # Upgrade
 
 Back up `.trellis/`, `AGENTS.md`, and the configured agent directories before refreshing, including files Git ignores.

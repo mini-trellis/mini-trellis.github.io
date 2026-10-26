@@ -3,8 +3,9 @@ layout: default
 title: Releases
 nav_order: 4
 has_children: true
+lang: en
+lang_peer: /zh/releases/
 ---
-
 # Releases
 
 Notes for versions that are already published. The latest comparison with Trellis is [v0.3.1](/releases/v0.3.1/). Per-run numbers are in [Benchmark detail](/releases/benchmark-detail/).

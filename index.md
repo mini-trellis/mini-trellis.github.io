@@ -4,13 +4,11 @@ title: mini-trellis
 nav_order: 1
 has_children: true
 permalink: /
+lang: en
 ---
-
 # mini-trellis
 
 mini-trellis stores the conventions, research, and session notes you want a later coding session to find. Those files are Markdown in the repo. `mem recall` searches them together with the agent transcripts already on this machine.
-
-[中文](/zh/)
 
 ```bash
 npm install -g mini-trellis

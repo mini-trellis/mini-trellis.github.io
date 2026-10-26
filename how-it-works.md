@@ -3,10 +3,8 @@ layout: default
 title: How it works
 parent: mini-trellis
 nav_order: 2
+lang: en
 ---
-
-[中文](/zh/how-it-works/)
-
 # How it works
 
 A session starts with a short entry, about 1.1k characters. Later turns do not get another injection. When a change depends on an older decision, you search. When a session produces a rule or a fix worth keeping, you write it into the existing note and record the session.

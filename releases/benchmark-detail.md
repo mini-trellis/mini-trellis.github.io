@@ -3,6 +3,8 @@ layout: default
 title: "Benchmark detail"
 nav_order: 6
 parent: "Releases"
+lang: en
+lang_peer: /zh/releases/
 ---
 这次评测的目标很直接：在**同一套项目代码、同一份 `.trellis` 业务知识库、同一个 Claude Code、同一个模型与思考程度**下，实测把项目接入从 `Trellis` 换成 `mini-trellis` 后，完成同样的开发任务能不能更快、更省 Token。
 

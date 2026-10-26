@@ -3,10 +3,8 @@ layout: default
 title: Install
 parent: mini-trellis
 nav_order: 1
+lang: en
 ---
-
-[中文](/zh/install/)
-
 # Install
 
 ```bash

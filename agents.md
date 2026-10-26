@@ -2,9 +2,8 @@
 layout: default
 title: Agents
 nav_order: 2
+lang: en
 ---
-[中文](/zh/agents/)
-
 # Agents
 
 Pass one flag or several (`mini-trellis init -u your-name --claude --cursor`):

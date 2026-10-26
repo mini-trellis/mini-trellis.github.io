@@ -1,12 +1,10 @@
 ---
 layout: default
 title: 升级
-parent: 中文
+parent: mini-trellis
 nav_order: 6
+lang: zh
 ---
-
-[English](/upgrade/)
-
 # 升级
 
 `refresh` 之前先备份 `.trellis/`、`AGENTS.md` 和已配置的 Agent 目录，包括被 Git 忽略的文件。

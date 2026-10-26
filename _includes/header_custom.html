@@ -1,0 +1,23 @@
+{% if page.lang == "zh" %}
+  {% assign lang_peer = page.url | remove_first: "/zh" %}
+  {% if lang_peer == "" %}
+    {% assign lang_peer = "/" %}
+  {% endif %}
+  {% assign lang_label = "English" %}
+{% elsif page.lang_peer %}
+  {% assign lang_peer = page.lang_peer %}
+  {% assign lang_label = "中文" %}
+{% elsif page.url == "/" %}
+  {% assign lang_peer = "/zh/" %}
+  {% assign lang_label = "中文" %}
+{% else %}
+  {% assign lang_peer = "/zh" | append: page.url %}
+  {% assign lang_label = "中文" %}
+{% endif %}
+<nav aria-label="Language" class="aux-nav">
+  <ul class="aux-nav-list">
+    <li class="aux-nav-list-item">
+      <a href="{{ lang_peer | relative_url }}">{{ lang_label }}</a>
+    </li>
+  </ul>
+</nav>

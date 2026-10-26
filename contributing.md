@@ -2,9 +2,8 @@
 layout: default
 title: Contributing
 nav_order: 5
+lang: en
 ---
-[中文](/zh/contributing/)
-
 # Contributing
 
 This is a public AGPL-3.0 fork of Trellis 0.6.17. Keep the Mindfold copyright
