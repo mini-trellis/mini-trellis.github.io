@@ -27,6 +27,16 @@ mini-trellis mem read "<ref>"
 
 If nothing matches, change the code. You do not create a task first.
 
+## Since 0.3.2
+
+Released 2026-11-01. The prompt text was not lengthened. Recall regression tests cover the ranking changes. Full limits are in the [v0.3.2 notes](/releases/v0.3.2/).
+
+A user turn that only restates the query does not take the default hits away from a note that states the rule. Adding a request such as "write the path" still counts as restating the question. An id such as `TASK-4419` inside that question is still part of the question. A turn stays searchable when it adds a fact: a correction with no word like "confirmed", a numeric correction, or a Chinese rejection.
+
+A current note whose body states the rule ranks ahead of an archived task whose title repeats the query, including when the archived body also discusses the topic. The first heading is not counted as the body. A current note that only says TODO under the heading does not outrank an archived note that states the rule. A full path or a unique id still finds the archive. Declared `superseded` links are unchanged.
+
+Sharing a single ordinary word is not enough for a current note to outrank an archive. A one-word query, including a Chinese word with no spaces, can use body evidence.
+
 ## By host
 
 | Host | At session start | Transcripts |

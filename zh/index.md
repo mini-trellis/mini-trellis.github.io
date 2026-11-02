@@ -10,6 +10,9 @@ lang: zh
 
 mini-trellis 把下次会话还要找的约定、调研和开发记录写进仓库里的 Markdown。`mem recall` 同时查这些文件和这台机器上已有的 Agent 对话，先返回短摘录。
 
+{: .highlight }
+当前版本是 [v0.3.2](/releases/v0.3.2/)（2026-11-01）。只是在重复问题的那句话，不再把写下规则的笔记挤出默认结果。正文写了规则的现行笔记，排在标题重复查询的归档前面。
+
 ```bash
 npm install -g mini-trellis
 mini-trellis init -u your-name --claude
@@ -40,6 +43,6 @@ mini-trellis 不建立任务目录，也不按阶段往下推。规划、改代�
 | 规则改了 | 手改；旧句子常常还在 | 新旧结论挤在同一个索引里 | 散在各个归档任务目录 | 旧笔记用 `superseded` 指向新笔记，召回时现行的排在前面 |
 | 要跑什么 | 一个文件，不能搜 | 数据库、向量和 API key | 阶段门和子代理模板 | Git 里的 Markdown，加一个小 CLI |
 
-## 一组同条件实测
+## 同条件实测仍是 v0.3.1
 
-Claude Code 2.1.306，同一项目、同一份 `.trellis` 知识、同一个模型。mini-trellis v0.3.1 对 Trellis v0.7.0-beta.4，6 组任务各跑 3 次：累计耗时少 38.4%，处理 token 少 40.1%。处理 token 含缓存读取。题目在 [v0.3.1 说明](/releases/v0.3.1/)。
+v0.3.2 没有重跑这组耗时对比。Claude Code 2.1.306，同一项目、同一份 `.trellis` 知识、同一个模型。mini-trellis v0.3.1 对 Trellis v0.7.0-beta.4，6 组任务各跑 3 次：累计耗时少 38.4%，处理 token 少 40.1%。处理 token 含缓存读取。题目在 [v0.3.1 说明](/releases/v0.3.1/)。

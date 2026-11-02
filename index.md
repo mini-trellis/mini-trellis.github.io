@@ -10,6 +10,9 @@ lang: en
 
 mini-trellis stores the conventions, research, and session notes you want a later coding session to find. Those files are Markdown in the repo. `mem recall` searches them together with the agent transcripts already on this machine.
 
+{: .highlight }
+Current release is [v0.3.2](/releases/v0.3.2/) (2026-11-01). A question that only repeats the query no longer pushes a rule note out of the default hits. A current note whose body states the rule ranks ahead of an archived task whose title repeats the query.
+
 ```bash
 npm install -g mini-trellis
 mini-trellis init -u your-name --claude
@@ -40,6 +43,6 @@ mini-trellis does not create a task directory and does not advance a phase list.
 | When a rule changes | Edit by hand; old lines tend to stay | Old and new decisions sit in the same index | Notes are spread across archived task folders | A `superseded` note points at the current one, and recall prefers the current one |
 | What you run | A file, no search | A database, embeddings, and API keys | Phase gates and sub-agent templates | Git Markdown and a small CLI |
 
-## One measured comparison
+## Measured comparison, still v0.3.1
 
-On Claude Code 2.1.306, the same project, the same `.trellis` knowledge, and the same model, mini-trellis v0.3.1 against Trellis v0.7.0-beta.4: across 6 tasks × 3 runs, total wall time was 38.4% lower and processed tokens were 40.1% lower. Processed tokens include cache reads. The task list is in the [v0.3.1 notes](/releases/v0.3.1/).
+The wall-time comparison has not been re-run for v0.3.2. On Claude Code 2.1.306, the same project, the same `.trellis` knowledge, and the same model, mini-trellis v0.3.1 against Trellis v0.7.0-beta.4: across 6 tasks × 3 runs, total wall time was 38.4% lower and processed tokens were 40.1% lower. Processed tokens include cache reads. The task list is in the [v0.3.1 notes](/releases/v0.3.1/).

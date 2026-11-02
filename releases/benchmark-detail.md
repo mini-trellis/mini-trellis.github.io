@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Benchmark detail"
-nav_order: 6
+nav_order: 7
 parent: "Releases"
 lang: en
 lang_peer: /zh/releases/

@@ -3,8 +3,13 @@ description: Project memory for AI coding agents. Spec, research, journals, and 
 remote_theme: just-the-docs/just-the-docs@v0.12.0
 url: https://mini-trellis.github.io
 permalink: pretty
+color_scheme: mini-trellis
 search_enabled: true
 heading_anchors: true
+callouts:
+  highlight:
+    title: v0.3.2
+    color: green
 aux_links:
   Repository:
     - https://github.com/Tiger-zzZ/mini-trellis
