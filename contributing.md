@@ -4,7 +4,6 @@ title: Contributing
 nav_order: 7
 lang: en
 ---
-
 # Contributing
 
 This is a public AGPL-3.0 fork of Trellis 0.6.17. Keep the Mindfold copyright
@@ -16,7 +15,7 @@ mini-trellis is a lightweight project memory layer: spec, research, journal,
 and cross-session recall. Contributions should help agents save and find
 reusable knowledge while keeping setup and daily use simple.
 
-Supported hosts: Claude Code, Codex, OpenCode, Pi, DeepSeek Harness, and Cursor. DeepSeek has no project SessionStart. Cursor-managed cloud agents do not run `sessionStart`; self-hosted machines remain unverified. Neither of those hosts parses local conversation history. OpenCode and Pi have no precise compact.
+Supported hosts: Claude Code, Codex, OpenCode, Pi, DeepSeek Harness, and Cursor. DeepSeek has no project SessionStart. Cursor cloud agents do not run `sessionStart`. Neither of those hosts parses local conversation history. OpenCode and Pi have no precise compact.
 
 ## How to work
 
@@ -33,3 +32,5 @@ once so the SessionStart hook in `.claude/` has something to read.
 
 Create a feature branch from the current development branch, make your changes,
 and submit a pull request.
+
+License: [AGPL-3.0](https://github.com/Tiger-zzZ/mini-trellis/blob/main/LICENSE). Copyright notices: [COPYRIGHT](https://github.com/Tiger-zzZ/mini-trellis/blob/main/COPYRIGHT).

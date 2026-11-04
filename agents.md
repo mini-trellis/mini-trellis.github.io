@@ -4,10 +4,9 @@ title: Agents
 nav_order: 4
 lang: en
 ---
-
 # Agents
 
-Combine flags as needed (for example, `mini-trellis init -u your-name --claude --cursor`):
+Pass one flag or several (`mini-trellis init -u your-name --claude --cursor`):
 
 | Agent | Init flag | Record a session | Knowledge & history support |
 | --- | --- | --- | --- |
@@ -32,3 +31,5 @@ Combine flags as needed (for example, `mini-trellis init -u your-name --claude -
   - OpenCode and Pi support session listing and search without precise compact boundary recovery. See the [v0.3.1 release notes](/releases/v0.3.1/).
 
 </details>
+
+---

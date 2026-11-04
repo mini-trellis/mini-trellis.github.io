@@ -5,7 +5,6 @@ parent: mini-trellis
 nav_order: 6
 lang: en
 ---
-
 # Migrate from Trellis
 
 Trellis and mini-trellis share `.trellis/`. Use the migration command to replace the existing integration instead of installing both into the same project. Back up project knowledge and host configuration, including ignored files, before proceeding.

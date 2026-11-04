@@ -12,9 +12,7 @@ lang: zh
 
 ## 项目现状
 
-已有 README、docs 或 spec 就维护原文件，保持原文语言，没有合适文件才新建短 spec。已实现能力核对代码或测试；确认决定和未使用常量不证明实现。已确认但未实现的约定与愿景单独写。改名同步修正符号和路径引用，仅改名或排版不新增 journal。
-
-journal 的主题链接也支持根目录 `README*.md`、`docs/` 或 `doc/` 下的 Markdown。已有项目需升级 CLI 并执行 `mini-trellis refresh`。具体用法见[维护项目现状](/zh/using/#维护项目现状)。
+已有 README、docs 或 spec 就维护原文件，保持原文语言，区分已实现能力与规划。更新规则和 README/docs 主题链接用法见[维护项目现状](/zh/using/#维护项目现状)。
 
 ## 约定
 

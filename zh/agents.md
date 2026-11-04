@@ -5,7 +5,6 @@ nav_order: 9
 parent: mini-trellis
 lang: zh
 ---
-
 # 支持的工具
 
 支持单个或组合安装（例如 `mini-trellis init -u your-name --claude --cursor`）：
@@ -33,3 +32,5 @@ lang: zh
   - OpenCode 与 Pi 支持列出会话与检索，暂无精确 compact 边界恢复。详见 [v0.3.1 版本说明](/releases/v0.3.1/)。
 
 </details>
+
+---

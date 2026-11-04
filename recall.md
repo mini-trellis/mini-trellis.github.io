@@ -45,14 +45,11 @@ Sharing a single ordinary word is not enough for a current note to outrank an ar
 | Codex | Project hook, after you trust the project and the hook | Local sessions. The compact hint arrives on the next user message |
 | OpenCode | Startup entry | Local sessions. `--include-children` merges sub-agent sessions. No precise compact boundary |
 | Pi | Startup entry | Local sessions. No precise compact boundary |
-| Cursor, local | Generated `sessionStart` entry verified on Cursor 3.27.22; hook logs alone do not prove model delivery | Cursor conversation history is not parsed |
+| Cursor, local | `sessionStart` short entry, verified on Cursor 3.27.22 | Cursor conversation history is not parsed |
 | Cursor-managed cloud | `sessionStart` does not run | Repo skills are present. History is not parsed |
-| Cursor, self-hosted machine | Not verified | Cursor conversation history is not parsed |
 | DeepSeek Harness | No project SessionStart. Call `mem recall` when you need the notes | Compressed transcripts in `~/.dsh/sessions` are not parsed |
 
 Codex trust steps are on [Agents](/agents/).
-
-Cursor setup and configuration changes are in the [v0.3.4 notes](/releases/v0.3.4/).
 
 ## After compact
 

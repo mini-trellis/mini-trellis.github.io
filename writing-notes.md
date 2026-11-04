@@ -12,9 +12,7 @@ Write a note when a later session would do the wrong thing without it. If a file
 
 ## Project description
 
-Keep one current description in the existing README, docs page, or spec, and preserve its language. Check implemented capabilities against code or tests; confirmed decisions and unused constants do not prove implementation. Keep agreed but unimplemented behavior and ideas separate. Update renamed symbol and path references without adding a journal entry for a rename or formatting change alone.
-
-Journal topic links also accept a root `README*.md` or Markdown under `docs/` or `doc/`. Existing projects need an upgraded CLI and `mini-trellis refresh` to receive this support. The [day-to-day guide](/using/#keep-the-project-description-current) walks through the process.
+Maintain the description in the README, docs page, or spec that already holds it. Preserve its language and keep implemented capabilities separate from agreed plans. See [Keep the project description current](/using/#keep-the-project-description-current) for updates and README/docs topic links.
 
 ## Spec
 
