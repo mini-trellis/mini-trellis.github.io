@@ -10,9 +10,13 @@ lang: en
 
 Write a note when a later session would do the wrong thing without it. If a file already covers the topic, edit that file.
 
+## Project description
+
+Maintain the description in the README, docs page, or spec that already holds it. Preserve its language and keep implemented capabilities separate from agreed plans. See [Keep the project description current](/using/#keep-the-project-description-current) for updates and README/docs topic links.
+
 ## Spec
 
-`.trellis/spec/` holds a rule that should still hold next time. Keep it short. Each directory has an `index.md`. SessionStart lists those index files. Link the article from the index.
+`.trellis/spec/` holds a rule that should still hold next time. Keep it short. Each directory has an `index.md`; link the article from that index. SessionStart reports the number of available spec indexes, and `mem recall` finds the relevant text on demand.
 
 ```markdown
 # Callbacks
@@ -43,7 +47,7 @@ Promote a research conclusion into `.trellis/spec/` only when the boundary shoul
 
 ## Journal
 
-`.trellis/workspace/<you>/` records the session: what changed, and the path of the spec or research note. The rule stays in spec or research.
+`.trellis/workspace/<you>/` records the session: what changed, and the actual topic path. Keep the authoritative text in that topic file, including an existing README or docs page when that is its home.
 
 `remember` writes that journal entry. A new install does not commit it. Auto-commit is `session_auto_commit` in [config](/commands/#config).
 

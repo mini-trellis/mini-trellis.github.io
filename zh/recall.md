@@ -46,8 +46,8 @@ mini-trellis mem read "<ref>"
 | Codex | 项目 hook。先信任项目和 hook | 本机会话。compact 提示在下一条用户消息时到达 |
 | OpenCode | 启动入口 | 本机会话。`--include-children` 合并子代理会话。没有精确 compact 边界 |
 | Pi | 启动入口 | 本机会话。没有精确 compact 边界 |
-| Cursor 本地 | `sessionStart` 注入短入口 | 不解析 Cursor 对话 |
-| Cursor 云端 | hook 不运行 | 仓库里的技能还在。不解析对话 |
+| Cursor 本地 | `sessionStart` 短入口，已在 Cursor 3.27.22 验证 | 不解析 Cursor 对话 |
+| Cursor 托管云端 | 不运行 `sessionStart` | 仓库里的技能还在。不解析对话 |
 | DeepSeek Harness | 没有项目级 SessionStart。需要笔记时自己跑 `mem recall` | 不解析 `~/.dsh/sessions` 里的压缩转录 |
 
 Codex 的信任步骤在[支持的工具](/zh/agents/)。
