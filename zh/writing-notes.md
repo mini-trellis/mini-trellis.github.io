@@ -10,9 +10,15 @@ lang: zh
 
 以后的会话没有这条会做错，才写下来。已经有同主题文件，就改那个文件。
 
+## 项目现状
+
+已有 README、docs 或 spec 就维护原文件，保持原文语言，没有合适文件才新建短 spec。已实现能力核对代码或测试；确认决定和未使用常量不证明实现。已确认但未实现的约定与愿景单独写。改名同步修正符号和路径引用，仅改名或排版不新增 journal。
+
+journal 的主题链接也支持根目录 `README*.md`、`docs/` 或 `doc/` 下的 Markdown。已有项目需升级 CLI 并执行 `mini-trellis refresh`。具体用法见[维护项目现状](/zh/using/#维护项目现状)。
+
 ## 约定
 
-`.trellis/spec/` 放下次还要遵守的规则，写短。每个目录有一份 `index.md`。SessionStart 只列出这些 index，文章从 index 链出去。
+`.trellis/spec/` 放下次还要遵守的规则，写短。每个目录有一份 `index.md`，文章从 index 链出去。SessionStart 只报告可用 spec index 的数量，相关正文由 `mem recall` 按需查找。
 
 ```markdown
 # 回调
@@ -43,7 +49,7 @@ lang: zh
 
 ## 日志
 
-`.trellis/workspace/<你>/` 记这次会话：改了什么，以及约定或调研笔记的路径。规则本身留在 spec 或 research。
+`.trellis/workspace/<你>/` 记这次会话：改了什么，以及实际主题路径。正文保留在主题文件里，也可以是原本就在维护的 README 或 docs。
 
 `remember` 写这条日志。新安装不会自动提交。自动提交由 [命令](/zh/commands/) 页里的 `session_auto_commit` 控制。
 
