@@ -6,6 +6,12 @@ permalink: pretty
 color_scheme: mini-trellis
 search_enabled: true
 heading_anchors: true
+defaults:
+  - scope:
+      path: ""
+      type: pages
+    values:
+      has_toc: false
 callouts:
   highlight:
     title: v0.3.4

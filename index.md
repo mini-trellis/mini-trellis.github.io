@@ -11,7 +11,7 @@ lang: en
 mini-trellis stores the conventions, research, and session notes you want a later coding session to find. Those files are Markdown in the repo. `mem recall` searches them together with the agent transcripts already on this machine.
 
 {: .highlight }
-Current release is [v0.3.4](/releases/v0.3.4/) (2026-11-04). Keep one current project description in your existing README, docs, or spec. Record and recall project knowledge in Cursor while preserving user hooks and configuration.
+Current release is [{{ site.callouts.highlight.title }}](/releases/{{ site.callouts.highlight.title }}/) (2026-11-04). Keep one current project description in your existing README, docs, or spec. Record and recall project knowledge in Cursor while preserving user hooks and configuration.
 
 ```bash
 npm install -g mini-trellis

@@ -1,0 +1,8 @@
+<link rel="icon" href="{{ '/assets/favicon.svg' | relative_url }}" type="image/svg+xml">
+<style>
+  /* Keep the release label current even when the browser reuses theme CSS. */
+  .main-content p.highlight::before,
+  .main-content blockquote.highlight::before {
+    content: {{ site.callouts.highlight.title | jsonify }};
+  }
+</style>

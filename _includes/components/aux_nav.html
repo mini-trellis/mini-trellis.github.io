@@ -1,0 +1,31 @@
+{% if page.lang_peer %}
+  {% assign lang_peer = page.lang_peer %}
+{% elsif page.lang == "zh" %}
+  {% assign lang_peer = page.url | remove_first: "/zh" %}
+  {% if lang_peer == "" %}
+    {% assign lang_peer = "/" %}
+  {% endif %}
+{% elsif page.url == "/" %}
+  {% assign lang_peer = "/zh/" %}
+{% else %}
+  {% assign lang_peer = "/zh" | append: page.url %}
+{% endif %}
+{% if page.lang == "zh" %}
+  {% assign lang_label = "English" %}
+  {% assign nav_label = "语言与链接" %}
+{% else %}
+  {% assign lang_label = "中文" %}
+  {% assign nav_label = "Language and links" %}
+{% endif %}
+<nav aria-label="{{ nav_label }}" class="aux-nav">
+  <ul class="aux-nav-list">
+    <li class="aux-nav-list-item">
+      <a href="{{ lang_peer | relative_url }}" class="site-button">{{ lang_label }}</a>
+    </li>
+    {% for link in site.aux_links %}
+      <li class="aux-nav-list-item">
+        <a href="{{ link.last }}" class="site-button"{% if site.aux_links_new_tab %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ link.first }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</nav>

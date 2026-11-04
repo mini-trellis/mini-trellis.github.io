@@ -11,7 +11,7 @@ lang: zh
 mini-trellis 把下次会话还要找的约定、调研和开发记录写进仓库里的 Markdown。`mem recall` 同时查这些文件和这台机器上已有的 Agent 对话，先返回短摘录。
 
 {: .highlight }
-当前版本是 [v0.3.4](/zh/releases/v0.3.4/)（2026-11-04）。直接维护已有 README、docs 或 spec 中的项目现状，在 Cursor 中记录与找回知识，配置时保留用户 hook 和自定义字段。
+当前版本是 [{{ site.callouts.highlight.title }}](/zh/releases/{{ site.callouts.highlight.title }}/)（2026-11-04）。直接维护已有 README、docs 或 spec 中的项目现状，在 Cursor 中记录与找回知识，配置时保留用户 hook 和自定义字段。
 
 ```bash
 npm install -g mini-trellis
