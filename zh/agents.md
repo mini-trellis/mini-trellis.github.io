@@ -14,9 +14,10 @@ lang: zh
 | **Claude Code** | `--claude` | `/mini-trellis:remember` | `SessionStart` 注入短入口；支持项目文档与 `~/.claude/projects` 本地历史检索 |
 | **Cursor** | `--cursor` | `mini-trellis-remember` | 安装 `.cursor/skills/` 和本地 `sessionStart` 短入口，已在 Cursor 3.27.22 验证。按需使用 `AGENTS.md` 和 `mem recall`。Cursor 托管云端不运行 `sessionStart`。不解析对话历史 |
 | **Codex** | `--codex` | `$mini-trellis-remember` | 支持项目 Hook 注入与本地会话历史检索 |
-| **OpenCode** | `--opencode` | `/mini-trellis:remember` | 支持启动入口与本地会话检索（含 `--include-children` 子代理会话合并） |
+| **OpenCode** | `--opencode` | `/mini-trellis:remember` | 默认 V2，已有项目保留 V1。支持项目知识检索；本地对话检索支持 V1 |
 | **Pi** | `--pi` | `/mini-trellis-remember` | 支持启动入口与本地会话检索 |
 | **DeepSeek Harness** | `--dsh` | `mini-trellis-remember` | 安装 `.dsh/skills/`，无项目级 `SessionStart`，由模型按需调用 `mem recall` / `mem read` |
+| **CodeBuddy CLI / IDE** | `--codebuddy` | `mini-trellis-remember`；CLI 也可 `/mini-trellis:remember` | 共用项目配置、技能和启动入口，支持项目知识检索 |
 
 <details>
 <summary><strong>查看 Codex 信任配置与各宿主边界说明</strong></summary>
@@ -29,7 +30,7 @@ lang: zh
 - **宿主边界说明**：
   - DeepSeek Harness 无项目级 `SessionStart` 注入点，不解析 `~/.dsh/sessions` 压缩转录本；
   - Cursor 本地 `sessionStart` 短入口已在 3.27.22 验证。hook 日志成功本身不能证明模型收到或使用内容。按需使用 `AGENTS.md`、技能 `mini-trellis-remember` 和 `mini-trellis mem recall`。Cursor 托管云端不运行 `sessionStart`，自托管机器仍未验证。不解析 Cursor 对话历史；
-  - OpenCode 与 Pi 支持列出会话与检索，暂无精确 compact 边界恢复。详见 [v0.3.1 版本说明](/releases/v0.3.1/)。
+  - OpenCode V1 与 Pi 支持列出会话与检索，暂无精确 compact 边界恢复。详见 [v0.3.1 版本说明](/releases/v0.3.1/)。
 
 </details>
 

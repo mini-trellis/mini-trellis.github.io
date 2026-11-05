@@ -19,7 +19,7 @@ npm install -g mini-trellis
 mini-trellis init -u your-name --claude
 ```
 
-参数：`--claude`、`--cursor`、`--codex`、`--opencode`、`--pi`、`--dsh`。用几个就写几个。`-y` 跳过提问。`init` 会写下 `.trellis/` 和对应宿主的文件，不会自己做 Git 提交。
+参数：`--claude`、`--cursor`、`--codex`、`--opencode`、`--pi`、`--dsh`、`--codebuddy`。用几个就写几个。`-y` 跳过提问。`init` 会写下 `.trellis/` 和对应宿主的文件，不会自己做 Git 提交。
 
 ```bash
 mini-trellis doctor
@@ -32,8 +32,10 @@ mini-trellis doctor
 ```text
 请在当前项目安装或迁移 mini-trellis。若还没有命令，先执行 npm install -g mini-trellis。
 如果项目里已有旧版工作流文件（例如 .trellis/workflow.md、.trellis/scripts/task.py，或 inject-*.py），先运行 mini-trellis migrate --dry-run，把计划给我看，确认后再执行 mini-trellis migrate -y。
-如果是新项目，运行 mini-trellis init -u <name> -y，并只加上我实际使用的工具参数（--claude、--codex、--opencode、--pi、--dsh、--cursor）。
+如果是新项目，运行 mini-trellis init -u <name> -y，并只加上我实际使用的工具参数（--claude、--codex、--opencode、--pi、--dsh、--cursor、--codebuddy）。
 最后运行 mini-trellis doctor，并说明结果。不要删除 .trellis/spec、.trellis/research 或 .trellis/workspace。
 ```
 
 已经装了 Trellis 的仓库走[从 Trellis 迁移](/zh/migration/)，不要两套一起留着。装完之后，查、记、compact，看[日常使用](/zh/using/)。
+
+OpenCode 新项目默认 V2；旧版宿主加 `--opencode-version 1`。已有项目升级时保留原协议。CodeBuddy CLI 与 IDE 共用 `--codebuddy`，只需安装一次。详见[支持的工具](/zh/agents/)。

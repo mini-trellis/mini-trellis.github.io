@@ -17,7 +17,7 @@ Run these from the project root. `mini-trellis mem help` prints the full flag li
 | `mini-trellis migrate --dry-run` | Show the Trellis migration plan. Does not write. |
 | `mini-trellis migrate` | Apply it. `-y` archives task files under `<topic>/legacy/`. |
 | `mini-trellis upgrade` | Update the global CLI. `--dry-run` prints the npm command. `--tag <tag>` picks a dist-tag or version. |
-| `mini-trellis refresh --dry-run` | Preview managed-file updates. Pass `--claude`, `--codex`, `--opencode`, `--pi`, `--dsh`, or `--cursor` to limit the host. |
+| `mini-trellis refresh --dry-run` | Preview managed-file updates. Pass `--claude`, `--codex`, `--opencode`, `--pi`, `--dsh`, `--cursor`, or `--codebuddy` to limit the host. |
 | `mini-trellis refresh` | Rewrite managed files you have not edited. |
 | `mini-trellis doctor` | Check files and the last hook result. `--json` prints the same report. |
 | `mini-trellis platforms` | List hosts initialized in this project. `--json` for the paths. |
@@ -40,7 +40,7 @@ Doctor checks are listed on [Day to day](/using/#when-something-looks-wrong).
 | `mini-trellis mem extract <session-id>` | Cleaned dialogue. `--grep` keeps matching turns. |
 | `mini-trellis mem projects` | Project directories and session counts. Use one as `--cwd` for another project. |
 
-`--include-children` merges OpenCode sub-agent sessions into the parent for `search` and `context`. `--json` is available on these commands.
+`--include-children` merges OpenCode V1 sub-agent sessions into the parent for `search` and `context`. `--json` is available on these commands.
 
 ## remember
 
@@ -62,3 +62,5 @@ Doctor checks are listed on [Day to day](/using/#when-something-looks-wrong).
 | `max_journal_lines` | `2000` | Rotate to the next journal file after this many lines. |
 | `packages` | unset | Optional. SessionStart can filter spec indexes by package path. |
 | `default_package` | unset | Package used when a path matches more than one. |
+
+OpenCode `init`, `refresh`, and `migrate` accept `--opencode-version 1|2`. New projects default to V2; ordinary refresh preserves the installed protocol. CodeBuddy uses the `mini-trellis-remember` skill; CLI also supports `/mini-trellis:remember`.

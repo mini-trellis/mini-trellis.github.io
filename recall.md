@@ -43,7 +43,7 @@ Sharing a single ordinary word is not enough for a current note to outrank an ar
 | --- | --- | --- |
 | Claude Code | SessionStart injects the short entry | Searches `~/.claude/projects` |
 | Codex | Project hook, after you trust the project and the hook | Local sessions. The compact hint arrives on the next user message |
-| OpenCode | Startup entry | Local sessions. `--include-children` merges sub-agent sessions. No precise compact boundary |
+| OpenCode V1 | Startup entry | Local sessions. `--include-children` merges sub-agent sessions. No precise compact boundary |
 | Pi | Startup entry | Local sessions. No precise compact boundary |
 | Cursor, local | `sessionStart` short entry, verified on Cursor 3.27.22 | Cursor conversation history is not parsed |
 | Cursor-managed cloud | `sessionStart` does not run | Repo skills are present. History is not parsed |
@@ -63,4 +63,6 @@ With no query, that reads a bounded window of turns before the latest compaction
 
 Three failures stay separate. No session id: the hint stays generic. The history file is not on disk yet: the command warns and exits `session not found` (`session-history-missing`). The file cannot be read: `session-history-unreadable`.
 
-OpenCode and Pi do not name the current session id at startup. Use `mem list --platform opencode` or `--platform pi`, then `mem context` with the full id from that list.
+OpenCode V1 and Pi do not name the current session id at startup. Use `mem list --platform opencode` or `--platform pi`, then `mem context` with the full id from that list.
+
+OpenCode V2 and CodeBuddy support saved project knowledge recall; raw conversation history is not parsed.

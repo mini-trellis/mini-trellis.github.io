@@ -11,7 +11,7 @@ lang: en
 mini-trellis stores the conventions, research, and session notes you want a later coding session to find. Those files are Markdown in the repo. `mem recall` searches them together with the agent transcripts already on this machine.
 
 {: .highlight }
-Current release is [{{ site.callouts.highlight.title }}](/releases/{{ site.callouts.highlight.title }}/) (2026-11-04). Keep one current project description in your existing README, docs, or spec. Record and recall project knowledge in Cursor while preserving user hooks and configuration.
+Current release is [{{ site.callouts.highlight.title }}](/releases/{{ site.callouts.highlight.title }}/) (2026-11-05). Use shared CodeBuddy CLI/IDE integration and OpenCode V2 by default in new projects. Existing OpenCode V1 projects keep their entry.
 
 ```bash
 npm install -g mini-trellis
@@ -37,12 +37,12 @@ mini-trellis does not create a task directory and does not advance a phase list.
 
 | | `CLAUDE.md` by hand | Vector DB / RAG memory | Phase-gated workflow (Trellis) | mini-trellis |
 | --- | --- | --- | --- | --- |
-| Startup and each turn | The file grows and is loaded every session | Depends on the plugin; indexing and network add latency | ~8.6k characters at startup, plus per-turn state, plus sub-agent re-injection | ~1.1k characters at startup, nothing on later turns |
+| Startup and each turn | The file grows and is loaded every session | Depends on the plugin; indexing and network add latency | ~8.6k characters at startup, plus per-turn state, plus sub-agent re-injection | ~1.1k-character memory entry, no per-turn workflow payload |
 | How a spec is loaded | The whole file, relevant or not | Similarity chunks; an exact constraint is easy to miss | Sub-agents re-read specs from a cold start | `mem recall` returns an excerpt; `mem read` opens the rest |
-| Past chats | Gone when the window closes | Chats have to be copied into the store | Task-directory artifacts | Claude, Codex, OpenCode, and Pi sessions are searched in place |
+| Past chats | Gone when the window closes | Chats have to be copied into the store | Task-directory artifacts | Claude, Codex, OpenCode V1, and Pi sessions are searched in place |
 | When a rule changes | Edit by hand; old lines tend to stay | Old and new decisions sit in the same index | Notes are spread across archived task folders | A `superseded` note points at the current one, and recall prefers the current one |
 | What you run | A file, no search | A database, embeddings, and API keys | Phase gates and sub-agent templates | Git Markdown and a small CLI |
 
 ## Measured comparison, still v0.3.1
 
-The wall-time comparison has not been re-run for v0.3.4. On Claude Code 2.1.306, the same project, the same `.trellis` knowledge, and the same model, mini-trellis v0.3.1 against Trellis v0.7.0-beta.4: across 6 tasks × 3 runs, total wall time was 38.4% lower and processed tokens were 40.1% lower. Processed tokens include cache reads. The task list is in the [v0.3.1 notes](/releases/v0.3.1/).
+The wall-time comparison has not been re-run for v0.3.5. On Claude Code 2.1.306, the same project, the same `.trellis` knowledge, and the same model, mini-trellis v0.3.1 against Trellis v0.7.0-beta.4: across 6 tasks × 3 runs, total wall time was 38.4% lower and processed tokens were 40.1% lower. Processed tokens include cache reads. The task list is in the [v0.3.1 notes](/releases/v0.3.1/).

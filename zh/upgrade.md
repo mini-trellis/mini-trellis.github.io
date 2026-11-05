@@ -18,7 +18,7 @@ mini-trellis doctor
 
 `upgrade` 更新全局 CLI。`refresh` 重写你没有改过的受管文件，规范、调研和日志留在原地。`platforms` 列出这个项目初始化过的工具。
 
-[v0.3.4](/zh/releases/v0.3.4/) 的 README/docs 主题路径与 Cursor 配置检查，需要同时升级 CLI 并刷新已有项目的脚本和技能。本地改过的文件先按 conflict 详情处理，不要直接覆盖。完成后新开 Agent 会话。
+升级到 [v0.3.5](/zh/releases/v0.3.5/) 后刷新项目脚本与技能。已有 OpenCode V1 项目保留原入口；切换到 V2 时先运行 `mini-trellis refresh --opencode --opencode-version 2 --dry-run`，确认后去掉 `--dry-run`。新增 CodeBuddy 使用 `mini-trellis init --codebuddy -y`。
 
 `mini-trellis uninstall` 会删掉整个 `.trellis/`，里面的笔记也一起删。先看 `mini-trellis uninstall --help`。
 

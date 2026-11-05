@@ -42,3 +42,5 @@ mini-trellis migrate             # 确认迁移，默认 no
 - 缺少 `.trellis/.gitignore` 时会补上，让本地身份与运行状态保持在 Git 之外，已有用户规则保留。不会取消 Git 对已跟踪文件的跟踪。
 - 迁移后的任务目录是 `.trellis/research/` 下的 topic，`mem recall` 可查活跃和归档笔记，启动时不枚举全部主题；只有没有未处理条目时才删除 `.trellis/tasks/`。
 - `.trellis/.version` 被移除，mini-trellis 自己不会再写这个文件，Trellis CLI 在这个项目里不会再有更新提示。
+
+CodeBuddy 迁移会合并 `.codebuddy/settings.json`，清理已识别的 Trellis 阶段 hook，保留用户 hook、环境和权限。OpenCode 迁移保留现有协议；迁移后可按[升级指南](/zh/upgrade/)切换到 V2。

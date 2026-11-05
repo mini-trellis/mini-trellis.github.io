@@ -11,7 +11,7 @@ lang: zh
 mini-trellis 把下次会话还要找的约定、调研和开发记录写进仓库里的 Markdown。`mem recall` 同时查这些文件和这台机器上已有的 Agent 对话，先返回短摘录。
 
 {: .highlight }
-当前版本是 [{{ site.callouts.highlight.title }}](/zh/releases/{{ site.callouts.highlight.title }}/)（2026-11-04）。直接维护已有 README、docs 或 spec 中的项目现状，在 Cursor 中记录与找回知识，配置时保留用户 hook 和自定义字段。
+当前版本是 [{{ site.callouts.highlight.title }}](/zh/releases/{{ site.callouts.highlight.title }}/)（2026-11-05）。新增 CodeBuddy CLI/IDE 共用集成，OpenCode 新项目默认 V2，已有 V1 项目保留原入口。
 
 ```bash
 npm install -g mini-trellis
@@ -37,12 +37,12 @@ mini-trellis 不建立任务目录，也不按阶段往下推。规划、改代�
 
 | | 手写 `CLAUDE.md` | 向量库 / RAG 记忆 | 分阶段工作流（Trellis） | mini-trellis |
 | --- | --- | --- | --- | --- |
-| 启动和每一轮 | 文件越写越长，每次会话整份载入 | 看插件；索引和网络会加延迟 | 启动约 8.6k 字符，之后每轮再注入状态，子代理还要再读一遍 | 启动约 1.1k 字符，后面的轮次不再注入 |
+| 启动和每一轮 | 文件越写越长，每次会话整份载入 | 看插件；索引和网络会加延迟 | 启动约 8.6k 字符，之后每轮再注入状态，子代理还要再读一遍 | 约 1.1k 字符的知识入口，不逐轮注入工作流状态 |
 | 规范怎么读到 | 整份都在上下文里 | 按相似度切块，精确约束容易漏 | 子代理冷启动后重复读规范 | `mem recall` 给摘录，不够再 `mem read` |
-| 以前的对话 | 关掉窗口就没了 | 要先同步进外部存储 | 靠任务目录里的文件 | 直接查本机的 Claude、Codex、OpenCode、Pi 会话 |
+| 以前的对话 | 关掉窗口就没了 | 要先同步进外部存储 | 靠任务目录里的文件 | 直接查本机的 Claude、Codex、OpenCode V1、Pi 会话 |
 | 规则改了 | 手改；旧句子常常还在 | 新旧结论挤在同一个索引里 | 散在各个归档任务目录 | 旧笔记用 `superseded` 指向新笔记，召回时现行的排在前面 |
 | 要跑什么 | 一个文件，不能搜 | 数据库、向量和 API key | 阶段门和子代理模板 | Git 里的 Markdown，加一个小 CLI |
 
 ## 同条件实测仍是 v0.3.1
 
-v0.3.4 没有重跑这组耗时对比。Claude Code 2.1.306，同一项目、同一份 `.trellis` 知识、同一个模型。mini-trellis v0.3.1 对 Trellis v0.7.0-beta.4，6 组任务各跑 3 次：累计耗时少 38.4%，处理 token 少 40.1%。处理 token 含缓存读取。题目在 [v0.3.1 说明](/releases/v0.3.1/)。
+v0.3.5 没有重跑这组耗时对比。Claude Code 2.1.306，同一项目、同一份 `.trellis` 知识、同一个模型。mini-trellis v0.3.1 对 Trellis v0.7.0-beta.4，6 组任务各跑 3 次：累计耗时少 38.4%，处理 token 少 40.1%。处理 token 含缓存读取。题目在 [v0.3.1 说明](/releases/v0.3.1/)。

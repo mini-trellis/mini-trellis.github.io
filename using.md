@@ -7,7 +7,7 @@ lang: en
 ---
 # Day to day
 
-Setup for a new project is on [Install](/install/). Commands below run from the project root. The record command is `/mini-trellis:remember` in Claude Code and OpenCode, `$mini-trellis-remember` in Codex, and `/mini-trellis-remember` in Pi. DeepSeek Harness and Cursor use the `mini-trellis-remember` skill.
+Setup for a new project is on [Install](/install/). Commands below run from the project root. The record command is `/mini-trellis:remember` in Claude Code and OpenCode, `$mini-trellis-remember` in Codex, and `/mini-trellis-remember` in Pi. DeepSeek Harness, Cursor and CodeBuddy use the `mini-trellis-remember` skill.
 
 ## Install on a new project
 
@@ -16,7 +16,36 @@ npm install -g mini-trellis
 mini-trellis init -u your-name --claude
 ```
 
-Pass only the tools you use: `--claude`, `--codex`, `--opencode`, `--pi`, `--dsh`, `--cursor`. Add `-y` to skip prompts. Init writes `.trellis/` and the host files. It does not create a Git commit. DeepSeek has no SessionStart, so call `mem recall` when project knowledge is needed. Cursor installs skills and a local `sessionStart` hook; Cursor-managed cloud agents do not run that hook, and a local hook run does not by itself mean the agent prompt received `additional_context`. Neither host parses local conversation history. OpenCode and Pi have no precise compact.
+Pass only the tools you use: `--claude`, `--codex`, `--opencode`, `--pi`, `--dsh`, `--cursor`, `--codebuddy`. Add `-y` to skip prompts. Init writes `.trellis/` and the host files. It does not create a Git commit. DeepSeek has no SessionStart, so call `mem recall` when project knowledge is needed. Cursor installs skills and a local `sessionStart` hook; Cursor-managed cloud agents do not run that hook, and a local hook run does not by itself mean the agent prompt received `additional_context`. Neither host parses local conversation history. OpenCode and Pi have no precise compact.
+
+## OpenCode V1 and V2
+
+New projects default to V2:
+
+```bash
+mini-trellis init -u your-name --opencode -y
+```
+
+Pass `--opencode-version 1` for a V1 host. Upgrades and ordinary refresh preserve an existing project's protocol. Both protocols share project knowledge and skills, with one active entry per project.
+
+Preview before switching to V2:
+
+```bash
+mini-trellis refresh --opencode --opencode-version 2 --dry-run
+mini-trellis refresh --opencode --opencode-version 2
+```
+
+Use `1` to switch back. Updates preserve user plugins, SDK versions, and dependencies; review any conflicts with local edits. OpenCode V2 supports project knowledge recall; raw conversation history search supports V1.
+
+## CodeBuddy CLI and IDE
+
+```bash
+mini-trellis init -u your-name --codebuddy -y
+```
+
+Both interfaces share `.codebuddy/settings.json` and `.codebuddy/skills/` in one installation. Record confirmed conclusions with the `mini-trellis-remember` skill; CLI also offers `/mini-trellis:remember`. Update an existing topic first. Use `mem recall` to find project knowledge and `mem read` to expand incomplete excerpts.
+
+Installation and refresh preserve user hooks, environment, and permissions. Follow CodeBuddy's login and project trust prompts, then start a new chat after configuration. Saved project knowledge is supported; raw CodeBuddy conversation history is not parsed.
 
 ## Cursor
 
@@ -146,7 +175,7 @@ For an older condition, add `--grep "<keyword>"` to locate the original turns. C
 
 Three failures stay separate. No session id: the hint stays generic and does not attach another session. The history file is not on disk yet: the command warns that this session has no readable history, then exits with `session not found`. The file cannot be read: the warning says it cannot read that session. Those two warnings are `session-history-missing` and `session-history-unreadable`.
 
-OpenCode and Pi do not have this precise session recovery. Their startup text does not name the current session id. Use `mem recall` and `mem read` for notes. To inspect a local history file, use `mem list --platform opencode` or `--platform pi` and then `mem context` with the full id from that list.
+OpenCode and Pi do not have this precise session recovery. Their startup text does not name the current session id. Use `mem recall` and `mem read` for notes. To inspect OpenCode V1 or Pi history, use `mem list --platform opencode` or `--platform pi` and then `mem context` with the full id from that list.
 
 ## When something looks wrong
 
@@ -161,7 +190,7 @@ mini-trellis doctor
 | `legacy-trellis` | A Trellis workflow is still present. Run `mini-trellis migrate --dry-run`. |
 | `memory-layer` | `.trellis` or `add_session.py` is missing. Run `mini-trellis init`. |
 | `instructions` | `AGENTS.md` is missing the managed block. Run init again. |
-| `platforms` | No host was found. Pass `--claude`, `--codex`, `--opencode`, `--pi`, `--dsh`, or `--cursor`. |
+| `platforms` | No host was found. Pass `--claude`, `--codex`, `--opencode`, `--pi`, `--dsh`, `--cursor`, or `--codebuddy`. |
 | `<host>-runtime` unknown | No real hook run is on disk yet. Start one host session. For Codex, trust the project hook first. For Cursor, a later hook record still does not prove the short entry reached the model prompt. |
 | `cursor-config` | `.cursor/hooks.json` is invalid or the mini-trellis startup hook is unregistered. Follow the detail; invalid configuration is kept. |
 | `<host>-runtime` warn | The last hook did not finish cleanly. The detail has the status and error category. |

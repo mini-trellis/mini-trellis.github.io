@@ -7,7 +7,7 @@ lang: zh
 ---
 # 日常使用
 
-新项目的安装在[安装](/zh/install/)。命令在项目根目录执行。Claude Code 和 OpenCode 用 `/mini-trellis:remember`，Codex 用 `$mini-trellis-remember`，Pi 用 `/mini-trellis-remember`。DeepSeek Harness 和 Cursor 用技能 `mini-trellis-remember`。
+新项目的安装在[安装](/zh/install/)。命令在项目根目录执行。Claude Code 和 OpenCode 用 `/mini-trellis:remember`，Codex 用 `$mini-trellis-remember`，Pi 用 `/mini-trellis-remember`。DeepSeek Harness、Cursor 和 CodeBuddy 用技能 `mini-trellis-remember`。
 
 ## 从零安装
 
@@ -16,7 +16,36 @@ npm install -g mini-trellis
 mini-trellis init -u 你的名字 --claude
 ```
 
-只加上实际使用的宿主：`--claude`、`--codex`、`--opencode`、`--pi`、`--dsh`、`--cursor`。加上 `-y` 会跳过提问。init 写入 `.trellis/` 和宿主文件，不创建 Git 提交。DeepSeek 没有 SessionStart，需要时自己调用 `mem recall`。Cursor 会装上技能和本地 `sessionStart`；Cursor 托管云端不跑这个 hook，本地 hook 跑过也不等于 Agent 提示里收到了 `additional_context`。两边都不解析本机对话。OpenCode 和 Pi 没有精确 compact。
+只加上实际使用的宿主：`--claude`、`--codex`、`--opencode`、`--pi`、`--dsh`、`--cursor`、`--codebuddy`。加上 `-y` 会跳过提问。init 写入 `.trellis/` 和宿主文件，不创建 Git 提交。DeepSeek 没有 SessionStart，需要时自己调用 `mem recall`。Cursor 会装上技能和本地 `sessionStart`；Cursor 托管云端不跑这个 hook，本地 hook 跑过也不等于 Agent 提示里收到了 `additional_context`。两边都不解析本机对话。OpenCode 和 Pi 没有精确 compact。
+
+## OpenCode V1 与 V2
+
+新项目默认 V2：
+
+```bash
+mini-trellis init -u your-name --opencode -y
+```
+
+旧版宿主加 `--opencode-version 1`。已有项目升级或普通刷新时保留原协议。两种协议共用项目知识和技能，每个项目使用一个入口。
+
+切换到 V2 前先预览：
+
+```bash
+mini-trellis refresh --opencode --opencode-version 2 --dry-run
+mini-trellis refresh --opencode --opencode-version 2
+```
+
+改为 `1` 可以切回。更新保留用户插件、SDK 版本和依赖；遇到本地修改冲突时按提示处理。OpenCode V2 支持项目知识召回；原始对话历史检索支持 V1。
+
+## CodeBuddy CLI 与 IDE
+
+```bash
+mini-trellis init -u your-name --codebuddy -y
+```
+
+两端共用 `.codebuddy/settings.json` 和 `.codebuddy/skills/`，只需安装一次。使用 `mini-trellis-remember` 技能记录已确认的结论；CLI 也可用 `/mini-trellis:remember`。优先更新已有主题，用 `mem recall` 查询项目知识，摘录不足时用 `mem read` 展开。
+
+安装和刷新保留用户 hook、环境与权限。在 CodeBuddy 中按提示完成登录和项目信任，配置后开启新会话。支持已保存的项目知识，不解析 CodeBuddy 原始对话历史。
 
 ## 在 Cursor 里
 
@@ -146,7 +175,7 @@ Codex 用 `--platform codex`。不加查询时，读的是最近一次压缩边�
 
 三种失败分开说。没有会话 id 时，提示保持通用，不改绑另一场。历史文件还没落盘时，命令警告这场会话没有可读历史，然后以 `session not found` 退出。文件不可读时，警告写明读不了这场会话。这两条警告分别是 `session-history-missing` 和 `session-history-unreadable`。
 
-OpenCode 和 Pi 还没有这种精确会话恢复。它们的启动文案不会点名当前会话 id。查笔记用 `mem recall` 和 `mem read`。要看本机历史文件时，用 `mem list --platform opencode` 或 `--platform pi`，再用列表里的完整 id 调 `mem context`。
+OpenCode 和 Pi 还没有这种精确会话恢复。它们的启动文案不会点名当前会话 id。查笔记用 `mem recall` 和 `mem read`。要看 OpenCode V1 或 Pi 历史文件时，用 `mem list --platform opencode` 或 `--platform pi`，再用列表里的完整 id 调 `mem context`。
 
 ## 排障
 
@@ -161,7 +190,7 @@ mini-trellis doctor
 | `legacy-trellis` | 还留着 Trellis 工作流。先跑 `mini-trellis migrate --dry-run`。 |
 | `memory-layer` | 缺少 `.trellis` 或 `add_session.py`。跑 `mini-trellis init`。 |
 | `instructions` | `AGENTS.md` 没有托管块。再跑一次 init。 |
-| `platforms` | 没有发现宿主。加上 `--claude`、`--codex`、`--opencode`、`--pi`、`--dsh` 或 `--cursor`。 |
+| `platforms` | 没有发现宿主。加上 `--claude`、`--codex`、`--opencode`、`--pi`、`--dsh`、`--cursor` 或 `--codebuddy`。 |
 | `<host>-runtime` 为 unknown | 还没有一次真实 hook 记录。开一轮宿主会话。Codex 要先信任项目 hook。Cursor 还要分开看：hook 记录出现，也不等于短入口进了模型提示。 |
 | `cursor-config` | `.cursor/hooks.json` 无效或 mini-trellis 启动 hook 没有注册。按详情处理；无效配置会保留。 |
 | `<host>-runtime` 为 warn | 最近一次 hook 没有干净结束。明细里有状态和错误类别。 |

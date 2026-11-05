@@ -44,7 +44,7 @@ mini-trellis mem read "<ref>"
 | --- | --- | --- |
 | Claude Code | SessionStart 注入短入口 | 查 `~/.claude/projects` |
 | Codex | 项目 hook。先信任项目和 hook | 本机会话。compact 提示在下一条用户消息时到达 |
-| OpenCode | 启动入口 | 本机会话。`--include-children` 合并子代理会话。没有精确 compact 边界 |
+| OpenCode V1 | 启动入口 | 本机会话。`--include-children` 合并子代理会话。没有精确 compact 边界 |
 | Pi | 启动入口 | 本机会话。没有精确 compact 边界 |
 | Cursor 本地 | `sessionStart` 短入口，已在 Cursor 3.27.22 验证 | 不解析 Cursor 对话 |
 | Cursor 托管云端 | 不运行 `sessionStart` | 仓库里的技能还在。不解析对话 |
@@ -64,4 +64,6 @@ mini-trellis mem context <session-id> --platform claude
 
 三种失败分开。没有会话 id：提示保持笼统。历史文件还没落盘：命令警告并以 `session not found` 退出（`session-history-missing`）。文件读不了：`session-history-unreadable`。
 
-OpenCode 和 Pi 的启动文本不带当前会话 id。先 `mem list --platform opencode` 或 `--platform pi`，再用列表里的完整 id 跑 `mem context`。
+OpenCode V1 和 Pi 的启动文本不带当前会话 id。先 `mem list --platform opencode` 或 `--platform pi`，再用列表里的完整 id 跑 `mem context`。
+
+OpenCode V2 与 CodeBuddy 支持已保存项目知识的召回，不解析原始对话历史。

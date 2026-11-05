@@ -42,3 +42,5 @@ Before migration, back up project knowledge and custom configuration, including 
 - A missing `.trellis/.gitignore` is added to keep local identity and runtime state out of Git. Existing user ignore rules are kept. This does not untrack files already in Git.
 - Migrated task directories are topics under `.trellis/research/` now; `mem recall` searches active and archived notes without listing all topics at startup. `.trellis/tasks/` is removed only if no unprocessed entries remain.
 - `.trellis/.version` is removed and mini-trellis never writes one, so the Trellis CLI stays quiet in that project.
+
+CodeBuddy migration merges `.codebuddy/settings.json`, removes known Trellis stage hooks, and preserves user hooks, environment, and permissions. OpenCode migration keeps the existing protocol; switch to V2 afterward using the [upgrade guide](/upgrade/).

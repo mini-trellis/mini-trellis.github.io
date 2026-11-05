@@ -18,7 +18,7 @@ lang: zh
 | `mini-trellis migrate --dry-run` | 列出 Trellis 迁移计划。不写文件。 |
 | `mini-trellis migrate` | 执行迁移。`-y` 把任务文件归档到 `<topic>/legacy/`。 |
 | `mini-trellis upgrade` | 更新全局 CLI。`--dry-run` 只打印 npm 命令。`--tag <tag>` 指定 dist-tag 或版本。 |
-| `mini-trellis refresh --dry-run` | 预览受管文件更新。可用 `--claude`、`--codex`、`--opencode`、`--pi`、`--dsh`、`--cursor` 限定宿主。 |
+| `mini-trellis refresh --dry-run` | 预览受管文件更新。可用 `--claude`、`--codex`、`--opencode`、`--pi`、`--dsh`、`--cursor`、`--codebuddy` 限定宿主。 |
 | `mini-trellis refresh` | 重写你没有改过的受管文件。 |
 | `mini-trellis doctor` | 检查文件和上一次 hook 结果。`--json` 打同一份报告。 |
 | `mini-trellis platforms` | 列出本项目初始化过的宿主。`--json` 带路径。 |
@@ -41,7 +41,7 @@ lang: zh
 | `mini-trellis mem extract <session-id>` | 整理后的对话。`--grep` 只留匹配的轮次。 |
 | `mini-trellis mem projects` | 项目目录和会话数。把其中一条当作另一个项目的 `--cwd`。 |
 
-`--include-children` 在 `search` 和 `context` 里把 OpenCode 子代理会话并进父会话。这些命令都可以加 `--json`。
+`--include-children` 在 `search` 和 `context` 里把 OpenCode V1 子代理会话并进父会话。这些命令都可以加 `--json`。
 
 ## remember
 
@@ -63,3 +63,5 @@ lang: zh
 | `max_journal_lines` | `2000` | 日志超过这个行数就换下一个文件。 |
 | `packages` | 不设置 | 可选。SessionStart 可以按包路径过滤 spec index。 |
 | `default_package` | 不设置 | 一条路径对上多个包时用哪一个。 |
+
+OpenCode 的 `init`、`refresh` 和 `migrate` 支持 `--opencode-version 1|2`。新项目默认 V2，普通刷新保留原协议。CodeBuddy 使用 `mini-trellis-remember` 技能；CLI 也支持 `/mini-trellis:remember`。
