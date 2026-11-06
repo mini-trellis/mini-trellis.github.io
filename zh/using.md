@@ -111,7 +111,7 @@ mini-trellis mem context <session-id> --platform claude
 
 ## 把选定聊天整理成项目知识
 
-此功能将在 [v0.3.6](/zh/releases/v0.3.6/) 提供。让 **mini-trellis-session-insight** 整理选定会话或 Markdown/文本导出：
+[v0.3.6](/zh/releases/v0.3.6/) 支持整理选定历史。让 **mini-trellis-session-insight** 整理选定会话或 Markdown/文本导出：
 
 ```text
 请用 mini-trellis-session-insight 整理 exports/callback-chat.md，更新已有项目文档。

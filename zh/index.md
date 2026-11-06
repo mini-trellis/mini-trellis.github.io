@@ -11,7 +11,7 @@ lang: zh
 mini-trellis 把下次会话还要找的约定、调研和开发记录写进仓库里的 Markdown。`mem recall` 同时查这些文件和这台机器上已有的 Agent 对话，先返回短摘录。
 
 {: .highlight }
-当前版本是 [{{ site.callouts.highlight.title }}](/zh/releases/{{ site.callouts.highlight.title }}/)（2026-11-05）。新增 CodeBuddy CLI/IDE 共用集成，OpenCode 新项目默认 V2，已有 V1 项目保留原入口。
+当前版本是 [{{ site.callouts.highlight.title }}](/zh/releases/{{ site.callouts.highlight.title }}/)（2026-11-06）。将选定聊天整理成项目知识，在下一次会话中复用。OpenCode V1 召回在每次查询内复用历史库的读取结果。
 
 ```bash
 npm install -g mini-trellis
@@ -24,7 +24,7 @@ mini-trellis init -u your-name --claude
 
 ## 已有聊天记录，想整理成项目文档？
 
-[v0.3.6（待发布）](/zh/releases/v0.3.6/) 将支持用 `mini-trellis-session-insight` 整理选定会话或文本导出，更新已有文档、保留来源和纠正，再于新会话中召回复用。见[使用示例](/zh/using/#把选定聊天整理成项目知识)。
+[v0.3.6](/zh/releases/v0.3.6/) 支持用 `mini-trellis-session-insight` 整理选定会话或文本导出，更新已有文档、保留来源和纠正，再于新会话中召回复用。见[使用示例](/zh/using/#把选定聊天整理成项目知识)。
 
 ## 一条记录放哪
 

@@ -11,7 +11,7 @@ lang: en
 mini-trellis stores the conventions, research, and session notes you want a later coding session to find. Those files are Markdown in the repo. `mem recall` searches them together with the agent transcripts already on this machine.
 
 {: .highlight }
-Current release is [{{ site.callouts.highlight.title }}](/releases/{{ site.callouts.highlight.title }}/) (2026-11-05). Use shared CodeBuddy CLI/IDE integration and OpenCode V2 by default in new projects. Existing OpenCode V1 projects keep their entry.
+Current release is [{{ site.callouts.highlight.title }}](/releases/{{ site.callouts.highlight.title }}/) (2026-11-06). Organize selected chats into project knowledge and reuse it in the next session. OpenCode V1 recall reuses the shared history database within each query.
 
 ```bash
 npm install -g mini-trellis
@@ -24,7 +24,7 @@ Node.js ≥ 18.17, Python ≥ 3.9, and Git. Flags and the first `doctor` run are
 
 ## Already have chats to organize?
 
-Coming in [v0.3.6](/releases/v0.3.6/): turn selected sessions or text exports into project knowledge with `mini-trellis-session-insight`. Update the existing document, keep sources and corrections, and recall it in the next chat. See [the example](/using/#turn-selected-chats-into-project-knowledge).
+In [v0.3.6](/releases/v0.3.6/), turn selected sessions or text exports into project knowledge with `mini-trellis-session-insight`. Update the existing document, keep sources and corrections, and recall it in the next chat. See [the example](/using/#turn-selected-chats-into-project-knowledge).
 
 ## Where a note goes
 

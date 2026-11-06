@@ -111,7 +111,7 @@ If nothing matches, change the code. You do not create a task first.
 
 ## Turn selected chats into project knowledge
 
-Coming in [v0.3.6](/releases/v0.3.6/). Ask **mini-trellis-session-insight** to organize a selected session or a Markdown/text export:
+Available in [v0.3.6](/releases/v0.3.6/). Ask **mini-trellis-session-insight** to organize a selected session or a Markdown/text export:
 
 ```text
 Use mini-trellis-session-insight to organize exports/callback-chat.md.

@@ -14,7 +14,7 @@ defaults:
       has_toc: false
 callouts:
   highlight:
-    title: v0.3.5
+    title: v0.3.6
     color: green
 aux_links:
   Repository:
