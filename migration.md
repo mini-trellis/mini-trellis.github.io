@@ -44,3 +44,5 @@ Before migration, back up project knowledge and custom configuration, including 
 - `.trellis/.version` is removed and mini-trellis never writes one, so the Trellis CLI stays quiet in that project.
 
 CodeBuddy migration merges `.codebuddy/settings.json`, removes known Trellis stage hooks, and preserves user hooks, environment, and permissions. OpenCode migration keeps the existing protocol; switch to V2 afterward using the [upgrade guide](/upgrade/).
+
+After upgrading to v0.3.6 when it is published, organize selected previous chats or supplied text exports into the retained project documents. See [the history example](/using/#turn-selected-chats-into-project-knowledge).

@@ -22,6 +22,10 @@ Node.js ≥ 18.17, Python ≥ 3.9, and Git. Flags and the first `doctor` run are
 
 ![Conventions, research, and verified fixes stay in project Markdown and get reused later.](/assets/knowledge-en.svg)
 
+## Already have chats to organize?
+
+Coming in [v0.3.6](/releases/v0.3.6/): turn selected sessions or text exports into project knowledge with `mini-trellis-session-insight`. Update the existing document, keep sources and corrections, and recall it in the next chat. See [the example](/using/#turn-selected-chats-into-project-knowledge).
+
 ## Where a note goes
 
 | | Path | Put it here when |
@@ -43,6 +47,6 @@ mini-trellis does not create a task directory and does not advance a phase list.
 | When a rule changes | Edit by hand; old lines tend to stay | Old and new decisions sit in the same index | Notes are spread across archived task folders | A `superseded` note points at the current one, and recall prefers the current one |
 | What you run | A file, no search | A database, embeddings, and API keys | Phase gates and sub-agent templates | Git Markdown and a small CLI |
 
-## Measured comparison, still v0.3.1
+## v0.3.1 measured comparison
 
-The wall-time comparison has not been re-run for v0.3.5. On Claude Code 2.1.306, the same project, the same `.trellis` knowledge, and the same model, mini-trellis v0.3.1 against Trellis v0.7.0-beta.4: across 6 tasks × 3 runs, total wall time was 38.4% lower and processed tokens were 40.1% lower. Processed tokens include cache reads. The task list is in the [v0.3.1 notes](/releases/v0.3.1/).
+On Claude Code 2.1.306, the same project, the same `.trellis` knowledge, and the same model, mini-trellis v0.3.1 against Trellis v0.7.0-beta.4: across 6 tasks × 3 runs, total wall time was 38.4% lower and processed tokens were 40.1% lower. Processed tokens include cache reads. The task list is in the [v0.3.1 notes](/releases/v0.3.1/).

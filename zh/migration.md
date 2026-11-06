@@ -44,3 +44,5 @@ mini-trellis migrate             # 确认迁移，默认 no
 - `.trellis/.version` 被移除，mini-trellis 自己不会再写这个文件，Trellis CLI 在这个项目里不会再有更新提示。
 
 CodeBuddy 迁移会合并 `.codebuddy/settings.json`，清理已识别的 Trellis 阶段 hook，保留用户 hook、环境和权限。OpenCode 迁移保留现有协议；迁移后可按[升级指南](/zh/upgrade/)切换到 V2。
+
+v0.3.6 发布并升级后，可将选定旧会话或提供的文本导出整理进保留下来的项目文档。见[历史整理示例](/zh/using/#把选定聊天整理成项目知识)。

@@ -22,6 +22,10 @@ mini-trellis init -u your-name --claude
 
 ![约定、研究结论和验证记录留在项目 Markdown 里，后面的会话再拿来用。](/assets/knowledge-zh.svg)
 
+## 已有聊天记录，想整理成项目文档？
+
+[v0.3.6（待发布）](/zh/releases/v0.3.6/) 将支持用 `mini-trellis-session-insight` 整理选定会话或文本导出，更新已有文档、保留来源和纠正，再于新会话中召回复用。见[使用示例](/zh/using/#把选定聊天整理成项目知识)。
+
 ## 一条记录放哪
 
 | | 路径 | 什么时候写在这里 |
@@ -43,6 +47,6 @@ mini-trellis 不建立任务目录，也不按阶段往下推。规划、改代�
 | 规则改了 | 手改；旧句子常常还在 | 新旧结论挤在同一个索引里 | 散在各个归档任务目录 | 旧笔记用 `superseded` 指向新笔记，召回时现行的排在前面 |
 | 要跑什么 | 一个文件，不能搜 | 数据库、向量和 API key | 阶段门和子代理模板 | Git 里的 Markdown，加一个小 CLI |
 
-## 同条件实测仍是 v0.3.1
+## v0.3.1 同条件实测
 
-v0.3.5 没有重跑这组耗时对比。Claude Code 2.1.306，同一项目、同一份 `.trellis` 知识、同一个模型。mini-trellis v0.3.1 对 Trellis v0.7.0-beta.4，6 组任务各跑 3 次：累计耗时少 38.4%，处理 token 少 40.1%。处理 token 含缓存读取。题目在 [v0.3.1 说明](/releases/v0.3.1/)。
+Claude Code 2.1.306，同一项目、同一份 `.trellis` 知识、同一个模型。mini-trellis v0.3.1 对 Trellis v0.7.0-beta.4，6 组任务各跑 3 次：累计耗时少 38.4%，处理 token 少 40.1%。处理 token 含缓存读取。题目在 [v0.3.1 说明](/releases/v0.3.1/)。

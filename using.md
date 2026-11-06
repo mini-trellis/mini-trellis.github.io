@@ -109,6 +109,27 @@ mini-trellis mem context <session-id> --platform claude
 
 If nothing matches, change the code. You do not create a task first.
 
+## Turn selected chats into project knowledge
+
+Coming in [v0.3.6](/releases/v0.3.6/). Ask **mini-trellis-session-insight** to organize a selected session or a Markdown/text export:
+
+```text
+Use mini-trellis-session-insight to organize exports/callback-chat.md.
+Update the existing project docs. Preserve confirmed decisions, corrections,
+exceptions and sources; ask about conflicting decisions together.
+```
+
+For a local session, select its full id with `mini-trellis mem list --platform claude --json --limit 10` and pass the platform and id instead of the export path. Native readers support Claude Code, Codex, OpenCode V1 and Pi; use Markdown/text exports from other hosts.
+
+The agent reads the selected material, checks relevant project docs and code, and updates the existing README, docs, spec or research topic in its original language. Confirmed requirements, implemented behavior and suggestions keep their own status. Source references stay beside the conclusions. After checking the saved topic, the agent records its journal link with `--no-commit`; unchanged material leaves the topic and journal as they are.
+
+In a new chat, put the knowledge to use:
+
+```text
+Use mini-trellis mem recall to find the callback rules, then add a retry-limit test.
+Preserve the recorded conditions and exceptions.
+```
+
 ## What to write down
 
 Keep a conclusion only when a later session would need it.

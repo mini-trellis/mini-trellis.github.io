@@ -109,6 +109,25 @@ mini-trellis mem context <session-id> --platform claude
 
 没有命中就直接改。不必为了走流程先建任务。
 
+## 把选定聊天整理成项目知识
+
+此功能将在 [v0.3.6](/zh/releases/v0.3.6/) 提供。让 **mini-trellis-session-insight** 整理选定会话或 Markdown/文本导出：
+
+```text
+请用 mini-trellis-session-insight 整理 exports/callback-chat.md，更新已有项目文档。
+保留确认结论、纠正、例外和来源；存在冲突的决定集中向我提问。
+```
+
+使用本地会话时，先用 `mini-trellis mem list --platform claude --json --limit 10` 选择完整 id，再以平台和 id 替换导出路径。原始会话读取支持 Claude Code、Codex、OpenCode V1 和 Pi；其他宿主使用 Markdown/文本导出。
+
+Agent 阅读选定材料，核对相关项目文档和代码，沿用原语言更新已有 README、docs、spec 或 research 主题。已确认需求、已实现行为和建议分别标明状态，结论旁保留来源。核对保存的主题后，以 `--no-commit` 记录 journal 链接；材料没有新知识时，主题和日志保持原样。
+
+在新会话中，直接使用这些知识：
+
+```text
+请用 mini-trellis mem recall 找回回调规则，再补一条重试上限测试，保留记录中的条件与例外。
+```
+
 ## 开发过程中记什么
 
 值得留下的只有以后还会用到的结论。
