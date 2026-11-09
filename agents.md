@@ -17,6 +17,9 @@ Pass one flag or several (`mini-trellis init -u your-name --claude --cursor`):
 | **Pi** | `--pi` | `/mini-trellis-remember` | Startup entry and local session search |
 | **DeepSeek Harness** | `--dsh` | `mini-trellis-remember` | Installs `.dsh/skills/`; no project `SessionStart` hook—the model calls `mem recall` / `mem read` when needed |
 | **CodeBuddy CLI / IDE** | `--codebuddy` | `mini-trellis-remember`; CLI also `/mini-trellis:remember` | Shared project settings, skills and startup entry; project knowledge recall |
+| **ZCode (Z.ai)** | `--zcode` | `$mini-trellis-remember` or the skill | Project startup entry, recording and cross-session recall; shared skills with Codex. Organizes supplied Markdown/text |
+
+In ZCode Desktop, review and trust the project hook in **Settings → Hooks**, then start a new session. See [setup and daily use](/using/#zcode-zai).
 
 <details>
 <summary><strong>Codex trust setup &amp; host-specific boundaries</strong></summary>

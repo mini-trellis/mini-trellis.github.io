@@ -11,7 +11,7 @@ lang: en
 mini-trellis stores the conventions, research, and session notes you want a later coding session to find. Those files are Markdown in the repo. `mem recall` searches them together with the agent transcripts already on this machine.
 
 {: .highlight }
-Current release is [{{ site.callouts.highlight.title }}](/releases/{{ site.callouts.highlight.title }}/) (2026-11-06). Organize selected chats into project knowledge and reuse it in the next session. OpenCode V1 recall reuses the shared history database within each query.
+Current release is [{{ site.callouts.highlight.title }}](/releases/{{ site.callouts.highlight.title }}/) (2026-11-09). Use project knowledge in ZCode, with shared skills and a startup entry. History reading preserves multibyte characters and reports incomplete records.
 
 ```bash
 npm install -g mini-trellis

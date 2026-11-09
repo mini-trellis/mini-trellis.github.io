@@ -17,7 +17,7 @@ Run these from the project root. `mini-trellis mem help` prints the full flag li
 | `mini-trellis migrate --dry-run` | Show the Trellis migration plan. Does not write. |
 | `mini-trellis migrate` | Apply it. `-y` archives task files under `<topic>/legacy/`. |
 | `mini-trellis upgrade` | Update the global CLI. `--dry-run` prints the npm command. `--tag <tag>` picks a dist-tag or version. |
-| `mini-trellis refresh --dry-run` | Preview managed-file updates. Pass `--claude`, `--codex`, `--opencode`, `--pi`, `--dsh`, `--cursor`, or `--codebuddy` to limit the host. |
+| `mini-trellis refresh --dry-run` | Preview managed-file updates. Pass `--claude`, `--codex`, `--opencode`, `--pi`, `--dsh`, `--cursor`, `--codebuddy`, or `--zcode` to limit the host. |
 | `mini-trellis refresh` | Rewrite managed files you have not edited. |
 | `mini-trellis doctor` | Check files and the last hook result. `--json` prints the same report. |
 | `mini-trellis platforms` | List hosts initialized in this project. `--json` for the paths. |
@@ -47,7 +47,7 @@ Doctor checks are listed on [Day to day](/using/#when-something-looks-wrong).
 | Host | How you record the session |
 | --- | --- |
 | Claude Code, OpenCode | `/mini-trellis:remember` |
-| Codex | `$mini-trellis-remember` |
+| Codex, ZCode | `$mini-trellis-remember` |
 | Pi | `/mini-trellis-remember` |
 | Cursor, DeepSeek Harness | `mini-trellis-remember` |
 

@@ -15,7 +15,7 @@ mini-trellis is a lightweight project memory layer: spec, research, journal,
 and cross-session recall. Contributions should help agents save and find
 reusable knowledge while keeping setup and daily use simple.
 
-Supported hosts: Claude Code, Codex, OpenCode, Pi, DeepSeek Harness, Cursor, and CodeBuddy. DeepSeek has no project SessionStart. Cursor cloud agents do not run `sessionStart`. Neither of those hosts parses local conversation history. OpenCode and Pi have no precise compact.
+Supported hosts: Claude Code, Codex, OpenCode, Pi, DeepSeek Harness, Cursor, CodeBuddy, and ZCode. DeepSeek has no project SessionStart. Cursor cloud agents do not run `sessionStart`. Neither of those hosts parses local conversation history. OpenCode and Pi have no precise compact.
 
 ## How to work
 
@@ -34,3 +34,5 @@ Create a feature branch from the current development branch, make your changes,
 and submit a pull request.
 
 License: [AGPL-3.0](https://github.com/Tiger-zzZ/mini-trellis/blob/main/LICENSE). Copyright notices: [COPYRIGHT](https://github.com/Tiger-zzZ/mini-trellis/blob/main/COPYRIGHT).
+
+Follow the [maintenance and release workflow](https://github.com/Tiger-zzZ/mini-trellis/blob/main/docs/maintenance-workflow.md) for acceptance, PR merges, `vX.Y.Z` tags and website updates. The maintainer publishes npm manually.

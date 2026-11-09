@@ -7,7 +7,7 @@ lang: en
 ---
 # Day to day
 
-Setup for a new project is on [Install](/install/). Commands below run from the project root. The record command is `/mini-trellis:remember` in Claude Code and OpenCode, `$mini-trellis-remember` in Codex, and `/mini-trellis-remember` in Pi. DeepSeek Harness, Cursor and CodeBuddy use the `mini-trellis-remember` skill.
+Setup for a new project is on [Install](/install/). Commands below run from the project root. The record command is `/mini-trellis:remember` in Claude Code and OpenCode, `$mini-trellis-remember` in Codex/ZCode, and `/mini-trellis-remember` in Pi. DeepSeek Harness, Cursor and CodeBuddy use the `mini-trellis-remember` skill.
 
 ## Install on a new project
 
@@ -16,7 +16,7 @@ npm install -g mini-trellis
 mini-trellis init -u your-name --claude
 ```
 
-Pass only the tools you use: `--claude`, `--codex`, `--opencode`, `--pi`, `--dsh`, `--cursor`, `--codebuddy`. Add `-y` to skip prompts. Init writes `.trellis/` and the host files. It does not create a Git commit. DeepSeek has no SessionStart, so call `mem recall` when project knowledge is needed. Cursor installs skills and a local `sessionStart` hook; Cursor-managed cloud agents do not run that hook, and a local hook run does not by itself mean the agent prompt received `additional_context`. Neither host parses local conversation history. OpenCode and Pi have no precise compact.
+Pass only the tools you use: `--claude`, `--codex`, `--opencode`, `--pi`, `--dsh`, `--cursor`, `--codebuddy`, `--zcode`. Add `-y` to skip prompts. Init writes `.trellis/` and the host files. It does not create a Git commit. DeepSeek has no SessionStart, so call `mem recall` when project knowledge is needed. Cursor installs skills and a local `sessionStart` hook; Cursor-managed cloud agents do not run that hook, and a local hook run does not by itself mean the agent prompt received `additional_context`. Neither host parses local conversation history. OpenCode and Pi have no precise compact.
 
 ## OpenCode V1 and V2
 
@@ -46,6 +46,37 @@ mini-trellis init -u your-name --codebuddy -y
 Both interfaces share `.codebuddy/settings.json` and `.codebuddy/skills/` in one installation. Record confirmed conclusions with the `mini-trellis-remember` skill; CLI also offers `/mini-trellis:remember`. Update an existing topic first. Use `mem recall` to find project knowledge and `mem read` to expand incomplete excerpts.
 
 Installation and refresh preserve user hooks, environment, and permissions. Follow CodeBuddy's login and project trust prompts, then start a new chat after configuration. Saved project knowledge is supported; raw CodeBuddy conversation history is not parsed.
+
+## ZCode (Z.ai)
+
+Install the three project skills under `.agents/skills/`, shared with Codex, and a SessionStart hook in `.zcode/config.json`:
+
+```bash
+mini-trellis init -u your-name --zcode -y
+```
+
+In ZCode Desktop, open **Settings → Hooks**, select this project, review `.zcode/hooks/session-start.py`, and choose **Trust**. Start a new session to load the project knowledge entry.
+
+For a separately installed ZCode CLI, use the workspace path shown by the host:
+
+```bash
+zcode skills list --cwd . --json
+zcode hooks trust review --workspace . --json
+```
+
+Review the command and script, then grant the returned `hookDeclarationDigest` and check the result:
+
+```bash
+zcode hooks trust grant --workspace . --hook-digest <reviewed-hookDeclarationDigest>
+zcode hooks trust status --workspace . --json
+mini-trellis doctor
+```
+
+Use `$mini-trellis-remember` or the named skill to record confirmed decisions. Existing topics keep their language, and journal entries link to the updated files. Use `mini-trellis-session-insight` to find project knowledge with `mem recall`/`mem read`, or organize supplied Markdown/text into project documents.
+
+After compact, `AGENTS.md` guides the agent to the same saved knowledge and skills. ZCode Desktop 3.17.2 / core 0.17.1 invokes the entry at session startup; compact continues with the project guidance already provided by the host.
+
+Init and refresh preserve your configuration, hooks and other skills. Review changed hook declarations in ZCode after refreshing. If a same-name skill already exists under `.zcode/skills/`, move or rename it before installing the shared skill. `doctor` shows project registration and the latest observed execution; use ZCode's hook panel or `trust status` to check trust.
 
 ## Cursor
 
@@ -211,7 +242,7 @@ mini-trellis doctor
 | `legacy-trellis` | A Trellis workflow is still present. Run `mini-trellis migrate --dry-run`. |
 | `memory-layer` | `.trellis` or `add_session.py` is missing. Run `mini-trellis init`. |
 | `instructions` | `AGENTS.md` is missing the managed block. Run init again. |
-| `platforms` | No host was found. Pass `--claude`, `--codex`, `--opencode`, `--pi`, `--dsh`, `--cursor`, or `--codebuddy`. |
+| `platforms` | No host was found. Pass `--claude`, `--codex`, `--opencode`, `--pi`, `--dsh`, `--cursor`, or `--codebuddy`, `--zcode`. |
 | `<host>-runtime` unknown | No real hook run is on disk yet. Start one host session. For Codex, trust the project hook first. For Cursor, a later hook record still does not prove the short entry reached the model prompt. |
 | `cursor-config` | `.cursor/hooks.json` is invalid or the mini-trellis startup hook is unregistered. Follow the detail; invalid configuration is kept. |
 | `<host>-runtime` warn | The last hook did not finish cleanly. The detail has the status and error category. |

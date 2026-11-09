@@ -19,7 +19,7 @@ mini-trellis doctor
 
 After upgrading, refresh project scripts and skills. Existing OpenCode V1 projects keep their entry. To switch to V2, run `mini-trellis refresh --opencode --opencode-version 2 --dry-run`, review the changes, then repeat without `--dry-run`. Add CodeBuddy with `mini-trellis init --codebuddy -y`.
 
-Upgrade to [v0.3.6](/releases/v0.3.6/) and refresh the project skills to use [selected-history organizing](/using/#turn-selected-chats-into-project-knowledge). OpenCode V1 recall also reuses the shared history database within each query.
+[v0.3.7](/releases/v0.3.7/) adds ZCode and improves multibyte and partial-history reading. Add ZCode to an existing project with `mini-trellis init --zcode -y`, review and trust the project hook in the host, then start a new session. Use [history organizing](/using/#turn-selected-chats-into-project-knowledge) to turn selected sessions and text exports into project docs.
 
 `mini-trellis uninstall` removes `.trellis/`, including those notes. Read `mini-trellis uninstall --help` before running it.
 

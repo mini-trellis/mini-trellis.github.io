@@ -18,7 +18,7 @@ lang: zh
 | `mini-trellis migrate --dry-run` | 列出 Trellis 迁移计划。不写文件。 |
 | `mini-trellis migrate` | 执行迁移。`-y` 把任务文件归档到 `<topic>/legacy/`。 |
 | `mini-trellis upgrade` | 更新全局 CLI。`--dry-run` 只打印 npm 命令。`--tag <tag>` 指定 dist-tag 或版本。 |
-| `mini-trellis refresh --dry-run` | 预览受管文件更新。可用 `--claude`、`--codex`、`--opencode`、`--pi`、`--dsh`、`--cursor`、`--codebuddy` 限定宿主。 |
+| `mini-trellis refresh --dry-run` | 预览受管文件更新。可用 `--claude`、`--codex`、`--opencode`、`--pi`、`--dsh`、`--cursor`、`--codebuddy`、`--zcode` 限定宿主。 |
 | `mini-trellis refresh` | 重写你没有改过的受管文件。 |
 | `mini-trellis doctor` | 检查文件和上一次 hook 结果。`--json` 打同一份报告。 |
 | `mini-trellis platforms` | 列出本项目初始化过的宿主。`--json` 带路径。 |
@@ -48,7 +48,7 @@ lang: zh
 | 宿主 | 怎么记这次会话 |
 | --- | --- |
 | Claude Code、OpenCode | `/mini-trellis:remember` |
-| Codex | `$mini-trellis-remember` |
+| Codex、ZCode | `$mini-trellis-remember` |
 | Pi | `/mini-trellis-remember` |
 | Cursor、DeepSeek Harness | `mini-trellis-remember` |
 
