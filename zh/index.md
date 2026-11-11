@@ -1,52 +1,36 @@
 ---
-layout: default
+layout: home
+home: true
 title: mini-trellis
-nav_order: 1
-has_children: true
-permalink: /zh/
 lang: zh
+lang_peer: /
+permalink: /zh/
+description: "让项目知识延续到下一次开发。保存约定、调研与开发记录，检索项目文档和本地对话。"
 ---
-# mini-trellis
+<section class="hero section-wrap">
+  <div class="hero-copy"><a class="release-pill" href="/zh/releases/v{{ site.data.docs.version }}/"><span class="status-dot"></span>v{{ site.data.docs.version }}<span class="pill-separator">/</span>版本说明 <span aria-hidden="true">↗</span></a><p class="eyebrow">PROJECT MEMORY · 项目知识</p><h1>下一次开发，<br>从已有<span>知识</span>开始。</h1><p class="hero-lead">把架构约定、调研结论和开发记录留在项目里。<br class="desktop-break">让编程 Agent 找到依据，接着往下做。</p><div class="hero-actions"><a class="button primary" href="/zh/install/">开始使用 <span aria-hidden="true">↗</span></a><a class="text-link" href="/zh/docs/">阅读文档 <span aria-hidden="true">→</span></a></div><p class="hero-fine">本地 Markdown · 按需检索 · 多 Agent 共享</p><div class="project-links"><a href="https://www.npmjs.com/package/mini-trellis" data-badge-src="https://img.shields.io/npm/dm/mini-trellis?style=flat-square&amp;logo=npm&amp;logoColor=white&amp;label=downloads&amp;labelColor=173f35&amp;color=28785e">npm · 月下载量 ↗</a><a class="docs-link" href="/zh/docs/"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 5v15M12 5C9 3 5 3 2 4v15c3-1 7-1 10 1 3-2 7-2 10-1V4c-3-1-7-1-10 1Z"/></svg>文档 ↗</a><a href="https://www.star-history.com/?repos=Tiger-zzZ%2Fmini-trellis&amp;type=date&amp;legend=top-left">Star History ↗</a></div></div>
+  <div class="hero-example"><div class="example-label">使用示例</div><div class="terminal"><div class="terminal-bar"><span class="terminal-dots" aria-hidden="true">● ● ●</span><span>mini-trellis</span><span>~/project</span></div><div class="demo-tabs" role="tablist" aria-label="使用步骤"><button type="button" role="tab" id="step-0" aria-controls="panel-0" aria-selected="false" tabindex="-1">01 记录决定</button><button type="button" role="tab" id="step-1" aria-controls="panel-1" aria-selected="true" tabindex="0">02 查找依据</button><button type="button" role="tab" id="step-2" aria-controls="panel-2" aria-selected="false" tabindex="-1">03 继续开发</button></div><div role="tabpanel" id="panel-0" aria-labelledby="step-0" tabindex="0" hidden><pre><span class="terminal-comment"># 在 Agent 中记录一条已确认的决定</span>
+把回调幂等规则更新到已有规范，
+使用 mini-trellis-remember 记录主题链接。</pre></div><div role="tabpanel" id="panel-1" aria-labelledby="step-1" tabindex="0"><pre><span class="terminal-comment"># 在新会话中查找来源</span>
+<span class="terminal-prompt">$</span> mini-trellis mem recall "回调 幂等"
 
-mini-trellis 把下次会话还要找的约定、调研和开发记录写进仓库里的 Markdown。`mem recall` 同时查这些文件和这台机器上已有的 Agent 对话，先返回短摘录。
+<span class="terminal-result">[doc]</span> .trellis/spec/backend/callbacks.md
+每个回调携带幂等键…
+<span class="terminal-comment">ref: &lt;ref-from-recall&gt;</span></pre></div><div role="tabpanel" id="panel-2" aria-labelledby="step-2" tabindex="0" hidden><pre><span class="terminal-comment"># 需要完整条件时展开原文</span>
+<span class="terminal-prompt">$</span> mini-trellis mem read "&lt;ref-from-recall&gt;"
 
-{: .highlight }
-当前版本是 [v0.3.8](/zh/releases/v0.3.8/)（2026-11-11）。新增 Kiro 与 OMP 支持，修复 Pi 参数传递与刷新清单，upgrade 自动刷新当前项目。[首次升级后手动 refresh](/zh/upgrade/)。
-
-```bash
-npm install -g mini-trellis
+依据当前约定修改代码，
+验证结果后更新同一篇笔记。</pre></div></div><div class="source-note"><div class="note-path"><span aria-hidden="true">↳</span> .trellis/spec/backend/callbacks.md</div><h2>回调幂等</h2><p>每个回调携带幂等键。重复投递返回第一次的结果。</p><div class="note-footer"><span class="status-dot"></span>项目约定 · 随代码维护</div></div></div>
+</section>
+<section class="continuity section-wrap"><div class="section-heading"><div><p class="eyebrow">01 / CONTINUITY</p><h2>有用的结论，<br>留在项目中。</h2></div><p>代码会变化，决定也会更新。把当前约定与当时的依据写清楚，后续开发就有资料可循。</p></div><ol class="steps"><li><span class="step-number">01</span><h3>保存</h3><p>更新已有主题，用日志链接这次修改与验证。</p></li><li><span class="step-number">02</span><h3>查找</h3><p>在文档和已支持的本地对话中检索，先读短摘录。</p></li><li><span class="step-number">03</span><h3>更新</h3><p>沿用当前规则，结论变化时修改原文档。</p></li></ol></section>
+<section class="repository-section"><div class="section-wrap repository-inner"><div><p class="eyebrow">02 / YOUR REPOSITORY</p><h2>文档在原处，<br>知识在手边。</h2><p>继续维护已有 README、docs 和项目规范。Markdown 可以编辑、审阅，也能通过 Git 分享给团队。</p><a class="text-link" href="/zh/how-it-works/">了解工作原理 →</a></div><div class="repo-tree"><div class="tree-label">~/your-project</div><pre><span class="tree-muted">├──</span> README.md
+<span class="tree-muted">├──</span> docs/
+<span class="tree-muted">└──</span> .trellis/
+    <span class="tree-muted">├──</span> <span class="tree-accent">spec/</span>       <span class="tree-comment">项目约定</span>
+    <span class="tree-muted">├──</span> <span class="tree-accent">research/</span>   <span class="tree-comment">调研与依据</span>
+    <span class="tree-muted">└──</span> <span class="tree-accent">workspace/</span>  <span class="tree-comment">开发日志</span></pre></div></div></section>
+<section class="get-started section-wrap"><div><p class="eyebrow">03 / GET STARTED</p><h2>从一条值得留下的决定开始。</h2><p>安装、记录，再到新会话里找回。</p><a class="text-link" href="/zh/install/">开始使用 →</a></div><div class="install-example"><pre><code>npm install -g mini-trellis
 mini-trellis init -u your-name --claude
-```
-
-需要 Node.js ≥ 18.17、Python ≥ 3.9 和 Git。参数和第一次 `doctor` 在[安装](/zh/install/)。之后记什么、怎么查，在[日常使用](/zh/using/)。
-
-![约定、研究结论和验证记录留在项目 Markdown 里，后面的会话再拿来用。](/assets/knowledge-zh.svg)
-
-## 已有聊天记录，想整理成项目文档？
-
-[v0.3.6](/zh/releases/v0.3.6/) 支持用 `mini-trellis-session-insight` 整理选定会话或文本导出，更新已有文档、保留来源和纠正，再于新会话中召回复用。见[使用示例](/zh/using/#把选定聊天整理成项目知识)。
-
-## 一条记录放哪
-
-| | 路径 | 什么时候写在这里 |
-| --- | --- | --- |
-| 约定 | `.trellis/spec/` | 下次改相关代码还要遵守。先读该目录的 `index.md`。 |
-| 调研 | `.trellis/research/` | 查过的结论，包括试过然后放弃的做法。过期主题可以挪到 `archive/`。 |
-| 日志 | `.trellis/workspace/<你>/` | 这次改了哪些文件、检查过没有。 |
-| 对话 | Agent 本机会话目录 | 要看当时怎么说的。`mem recall` 在原处查，不另做一份库。 |
-
-mini-trellis 不建立任务目录，也不按阶段往下推。规划、改代码和审查仍然由你决定。
-
-## 和别的做法比
-
-| | 手写 `CLAUDE.md` | 向量库 / RAG 记忆 | 分阶段工作流（Trellis） | mini-trellis |
-| --- | --- | --- | --- | --- |
-| 启动和每一轮 | 文件越写越长，每次会话整份载入 | 看插件；索引和网络会加延迟 | 启动约 8.6k 字符，之后每轮再注入状态，子代理还要再读一遍 | 约 1.1k 字符的知识入口，不逐轮注入工作流状态 |
-| 规范怎么读到 | 整份都在上下文里 | 按相似度切块，精确约束容易漏 | 子代理冷启动后重复读规范 | `mem recall` 给摘录，不够再 `mem read` |
-| 以前的对话 | 关掉窗口就没了 | 要先同步进外部存储 | 靠任务目录里的文件 | 直接查本机的 Claude、Codex、OpenCode V1、Pi 会话 |
-| 规则改了 | 手改；旧句子常常还在 | 新旧结论挤在同一个索引里 | 散在各个归档任务目录 | 旧笔记用 `superseded` 指向新笔记，召回时现行的排在前面 |
-| 要跑什么 | 一个文件，不能搜 | 数据库、向量和 API key | 阶段门和子代理模板 | Git 里的 Markdown，加一个小 CLI |
-
-## v0.3.1 同条件实测
-
-Claude Code 2.1.306，同一项目、同一份 `.trellis` 知识、同一个模型。mini-trellis v0.3.1 对 Trellis v0.7.0-beta.4，6 组任务各跑 3 次：累计耗时少 38.4%，处理 token 少 40.1%。处理 token 含缓存读取。题目在 [v0.3.1 说明](/releases/v0.3.1/)。
+mini-trellis doctor</code></pre><p>Node.js ≥ 18.17 · Python ≥ 3.9 · Git</p></div></section>
+<section class="platforms section-wrap"><h2>在你使用的 Agent 中继续</h2><ul><li>Claude Code</li><li>Codex</li><li>Cursor</li><li>OpenCode</li><li>Pi</li><li>OMP</li><li>Kiro</li><li>DeepSeek Harness</li><li>CodeBuddy</li><li>ZCode</li></ul><a class="text-link" href="/zh/agents/">查看平台能力与配置 →</a></section>
+<section class="guides section-wrap"><div class="section-heading compact"><h2>从上手到日常维护</h2><a class="text-link" href="/zh/docs/">完整文档 →</a></div><div class="guide-links"><a href="/zh/install/"><span class="guide-arrow" aria-hidden="true">↗</span><h3>开始使用</h3><p>安装与第一次记录</p></a><a href="/zh/history/"><span class="guide-arrow" aria-hidden="true">↗</span><h3>整理历史</h3><p>从聊天到项目文档</p></a><a href="/zh/commands/"><span class="guide-arrow" aria-hidden="true">↗</span><h3>命令参考</h3><p>参数、技能与配置</p></a><a href="/zh/troubleshooting/"><span class="guide-arrow" aria-hidden="true">↗</span><h3>故障排查</h3><p>从现象找到下一步</p></a></div></section><section class="home-faq section-wrap"><div><p class="eyebrow">FAQ</p><h2>你可能想知道</h2><a class="text-link" href="/zh/faq/">查看全部问题 →</a></div><div><details><summary>已有 README 和 AGENTS.md，还能直接使用吗？<span aria-hidden="true">+</span></summary><p>可以。已有文档继续在原处维护，mini-trellis 为这些资料提供检索入口，并帮助 Agent 更新主题和记录结论。</p></details><details><summary>需要手动保存每次聊天吗？<span aria-hidden="true">+</span></summary><p>保存后续还会用到的决定、调研和修复经验即可。选定历史对话可以用 session-insight 整理成项目文档。</p></details><details><summary>支持哪些本地对话记录？<span aria-hidden="true">+</span></summary><p>v{{ site.data.docs.version }} 读取 Claude Code、Codex、OpenCode V1 和 Pi 的原始历史。其他已接入 Agent 可以使用项目文档，或整理明确提供的文本导出。</p></details><details><summary>从 Trellis 迁移时会保留什么？<span aria-hidden="true">+</span></summary><p>迁移保留 spec、research 和 workspace，将旧任务材料整理到 research。执行前预览计划并备份自定义配置，具体文件处理见迁移指南。</p></details></div></section><section class="benchmark-link section-wrap"><a href="/zh/benchmarks/"><div><h2>实测与方法</h2><p>查看指定版本下的任务耗时、处理 Token 与注入字符测量。</p></div><span aria-hidden="true">↗</span></a></section>

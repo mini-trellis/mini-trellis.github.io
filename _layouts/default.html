@@ -1,73 +1,26 @@
 ---
-layout: table_wrappers
+layout: base
 ---
-
-{% comment %}
-Based on Just the Docs v0.12.0; local change: select the page language.
-https://github.com/just-the-docs/just-the-docs/blob/v0.12.0/_layouts/default.html
-
-The MIT License (MIT)
-
-Copyright (c) 2016 Patrick Marsceill
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.
-{% endcomment %}
-<!DOCTYPE html>
-
-<html lang="{{ page.lang | default: site.lang | default: 'en-US' }}">
-{% include head.html %}
-<body>
-  <a class="skip-to-main" href="#main-content">Skip to main content</a>
-  {% include icons/icons.html %}
-  {% if page.nav_enabled == true %}
-    {% include components/sidebar.html %}
-  {% elsif layout.nav_enabled == true and page.nav_enabled == nil %}
-    {% include components/sidebar.html %}
-  {% elsif site.nav_enabled != false and layout.nav_enabled == nil and page.nav_enabled == nil %}
-    {% include components/sidebar.html %}
-  {% endif %}
-  <div class="main" id="top">
-    {% include components/header.html %}
-    <div class="main-content-wrap">
-      {% include components/breadcrumbs.html %}
-      <div id="main-content" class="main-content">
-        <main>
-          {% if site.heading_anchors != false %}
-            {% include vendor/anchor_headings.html html=content beforeHeading="true" anchorBody="<svg viewBox=\"0 0 16 16\" aria-hidden=\"true\"><use xlink:href=\"#svg-link\"></use></svg>" anchorClass="anchor-heading" anchorAttrs="aria-labelledby=\"%html_id%\"" %}
-          {% else %}
-            {{ content }}
-          {% endif %}
-
-          {% if page.has_toc != false %}
-            {% include components/children_nav.html %}
-          {% endif %}
-        </main>
-        {% include components/footer.html %}
-      </div>
+{% assign lang = page.lang | default: 'en' %}
+<div class="docs-mobile-bar"><span>{% if lang == 'zh' %}文档导航{% else %}Documentation{% endif %}</span><button type="button" id="docs-menu-button" aria-expanded="false" aria-controls="docs-sidebar" hidden>{% if lang == 'zh' %}目录{% else %}Menu{% endif %} <span aria-hidden="true">☰</span></button></div>
+<div class="docs-shell">
+  <aside id="docs-sidebar" class="docs-sidebar">
+    <a class="docs-version" href="{% if lang == 'zh' %}/zh{% endif %}/releases/v{{ site.data.docs.version }}/">v{{ site.data.docs.version }} <span>{% if lang == 'zh' %}文档{% else %}Documentation{% endif %}</span></a>
+    <nav aria-label="{% if lang == 'zh' %}文档目录{% else %}Documentation navigation{% endif %}">
+      {% for group in site.data.navigation[lang] %}
+      <div class="nav-group"><h2>{{ group.title }}</h2><ul>
+        {% for item in group.items %}<li><a href="{{ item.url | relative_url }}"{% if page.url == item.url %} aria-current="page"{% endif %}>{{ item.title }}</a></li>{% endfor %}
+      </ul></div>
+      {% endfor %}
+    </nav>
+  </aside>
+  <main id="main-content" class="docs-main">
+    <div class="doc-eyebrow">{% if page.group %}{{ page.group }}{% elsif lang == 'zh' %}版本记录{% else %}Releases{% endif %}</div>
+    <article class="prose">{{ content }}</article>
+    <div class="doc-bottom">
+      {% if page.source_path %}<a href="{{ site.data.docs.source_repository }}{{ page.source_path }}">{% if lang == 'zh' %}查看文档源文件{% else %}View document source{% endif %} <span aria-hidden="true">↗</span></a>{% else %}<a href="https://github.com/mini-trellis/mini-trellis.github.io/blob/main/{{ page.path }}">{% if lang == 'zh' %}查看页面源文件{% else %}View page source{% endif %} <span aria-hidden="true">↗</span></a>{% endif %}
+      <a href="#top">{% if lang == 'zh' %}回到顶部{% else %}Back to top{% endif %} ↑</a>
     </div>
-    {% if site.search_enabled != false %}
-      {% include components/search_footer.html %}
-    {% endif %}
-  </div>
-
-  {% if site.mermaid %}
-    {% include components/mermaid.html %}
-  {% endif %}
-</body>
-</html>
+  </main>
+  <aside class="page-toc" aria-label="{% if lang == 'zh' %}本页目录{% else %}On this page{% endif %}" hidden><p>{% if lang == 'zh' %}本页内容{% else %}On this page{% endif %}</p><nav id="page-toc-links"></nav></aside>
+</div>

@@ -1,0 +1,200 @@
+{
+  "en": [
+    {
+      "title": "Start here",
+      "items": [
+        {
+          "title": "Documentation",
+          "url": "/docs/"
+        },
+        {
+          "title": "Install and get started",
+          "url": "/install/"
+        },
+        {
+          "title": "How it works",
+          "url": "/how-it-works/"
+        },
+        {
+          "title": "Examples",
+          "url": "/scenarios/"
+        }
+      ]
+    },
+    {
+      "title": "Guides",
+      "items": [
+        {
+          "title": "Day-to-day use",
+          "url": "/using/"
+        },
+        {
+          "title": "Writing and updating knowledge",
+          "url": "/writing-notes/"
+        },
+        {
+          "title": "Organize selected conversations",
+          "url": "/history/"
+        },
+        {
+          "title": "Search and recall",
+          "url": "/recall/"
+        }
+      ]
+    },
+    {
+      "title": "Reference",
+      "items": [
+        {
+          "title": "Agent setup",
+          "url": "/agents/"
+        },
+        {
+          "title": "Commands and skills",
+          "url": "/commands/"
+        },
+        {
+          "title": "Configuration and sharing",
+          "url": "/configuration/"
+        }
+      ]
+    },
+    {
+      "title": "Maintenance",
+      "items": [
+        {
+          "title": "Migrating from Trellis",
+          "url": "/migration/"
+        },
+        {
+          "title": "Upgrade, refresh, and uninstall",
+          "url": "/upgrade/"
+        },
+        {
+          "title": "Frequently asked questions",
+          "url": "/faq/"
+        },
+        {
+          "title": "Troubleshooting",
+          "url": "/troubleshooting/"
+        }
+      ]
+    },
+    {
+      "title": "Project",
+      "items": [
+        {
+          "title": "Benchmarks",
+          "url": "/benchmarks/"
+        },
+        {
+          "title": "Contributing to mini-trellis",
+          "url": "/contributing/"
+        },
+        {
+          "title": "Releases",
+          "url": "/releases/"
+        }
+      ]
+    }
+  ],
+  "zh": [
+    {
+      "title": "开始使用",
+      "items": [
+        {
+          "title": "文档",
+          "url": "/zh/docs/"
+        },
+        {
+          "title": "安装与快速开始",
+          "url": "/zh/install/"
+        },
+        {
+          "title": "工作原理",
+          "url": "/zh/how-it-works/"
+        },
+        {
+          "title": "使用场景",
+          "url": "/zh/scenarios/"
+        }
+      ]
+    },
+    {
+      "title": "使用指南",
+      "items": [
+        {
+          "title": "日常使用",
+          "url": "/zh/using/"
+        },
+        {
+          "title": "编写与更新知识",
+          "url": "/zh/writing-notes/"
+        },
+        {
+          "title": "整理历史对话",
+          "url": "/zh/history/"
+        },
+        {
+          "title": "检索与召回",
+          "url": "/zh/recall/"
+        }
+      ]
+    },
+    {
+      "title": "参考",
+      "items": [
+        {
+          "title": "Agent 配置",
+          "url": "/zh/agents/"
+        },
+        {
+          "title": "命令与技能",
+          "url": "/zh/commands/"
+        },
+        {
+          "title": "配置与团队共享",
+          "url": "/zh/configuration/"
+        }
+      ]
+    },
+    {
+      "title": "维护与支持",
+      "items": [
+        {
+          "title": "从 Trellis 迁移",
+          "url": "/zh/migration/"
+        },
+        {
+          "title": "升级、刷新与卸载",
+          "url": "/zh/upgrade/"
+        },
+        {
+          "title": "常见问题",
+          "url": "/zh/faq/"
+        },
+        {
+          "title": "故障排查",
+          "url": "/zh/troubleshooting/"
+        }
+      ]
+    },
+    {
+      "title": "项目",
+      "items": [
+        {
+          "title": "性能评测",
+          "url": "/zh/benchmarks/"
+        },
+        {
+          "title": "贡献指南",
+          "url": "/zh/contributing/"
+        },
+        {
+          "title": "版本记录",
+          "url": "/zh/releases/"
+        }
+      ]
+    }
+  ]
+}

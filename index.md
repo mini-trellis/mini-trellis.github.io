@@ -1,52 +1,37 @@
 ---
-layout: default
+layout: home
+home: true
 title: mini-trellis
-nav_order: 1
-has_children: true
-permalink: /
 lang: en
+lang_peer: /zh/
+permalink: /
+description: "Project knowledge, ready for the next session. Record decisions and search project docs and local agent conversations."
 ---
-# mini-trellis
+<section class="hero section-wrap">
+  <div class="hero-copy"><a class="release-pill" href="/releases/v{{ site.data.docs.version }}/"><span class="status-dot"></span>v{{ site.data.docs.version }}<span class="pill-separator">/</span>Release notes <span aria-hidden="true">↗</span></a><p class="eyebrow">PROJECT MEMORY</p><h1>The next session.<br>The <span>knowledge</span><br>you already have.</h1><p class="hero-lead">Keep conventions, research, and development notes in your project. Give your coding agent a source to work from.</p><div class="hero-actions"><a class="button primary" href="/install/">Get started <span aria-hidden="true">↗</span></a><a class="text-link" href="/docs/">Read the docs <span aria-hidden="true">→</span></a></div><p class="hero-fine">Local Markdown · On-demand recall · Shared across agents</p><div class="project-links"><a href="https://www.npmjs.com/package/mini-trellis" data-badge-src="https://img.shields.io/npm/dm/mini-trellis?style=flat-square&amp;logo=npm&amp;logoColor=white&amp;label=downloads&amp;labelColor=173f35&amp;color=28785e">npm · monthly downloads ↗</a><a class="docs-link" href="/docs/"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 5v15M12 5C9 3 5 3 2 4v15c3-1 7-1 10 1 3-2 7-2 10-1V4c-3-1-7-1-10 1Z"/></svg>Docs ↗</a><a href="https://www.star-history.com/?repos=Tiger-zzZ%2Fmini-trellis&amp;type=date&amp;legend=top-left">Star History ↗</a></div></div>
+  <div class="hero-example"><div class="example-label">Illustrative example</div><div class="terminal"><div class="terminal-bar"><span class="terminal-dots" aria-hidden="true">● ● ●</span><span>mini-trellis</span><span>~/project</span></div><div class="demo-tabs" role="tablist" aria-label="Example steps"><button type="button" role="tab" id="step-0" aria-controls="panel-0" aria-selected="false" tabindex="-1">01 Record</button><button type="button" role="tab" id="step-1" aria-controls="panel-1" aria-selected="true" tabindex="0">02 Recall</button><button type="button" role="tab" id="step-2" aria-controls="panel-2" aria-selected="false" tabindex="-1">03 Continue</button></div><div role="tabpanel" id="panel-0" aria-labelledby="step-0" tabindex="0" hidden><pre><span class="terminal-comment"># In your agent, save a confirmed decision</span>
+Update the existing callback spec with the
+idempotency rule. Use mini-trellis-remember
+to record a link to the topic.</pre></div><div role="tabpanel" id="panel-1" aria-labelledby="step-1" tabindex="0"><pre><span class="terminal-comment"># Find the source in a new session</span>
+<span class="terminal-prompt">$</span> mini-trellis mem recall "callback idempotency"
 
-mini-trellis stores the conventions, research, and session notes you want a later coding session to find. Those files are Markdown in the repo. `mem recall` searches them together with the agent transcripts already on this machine.
+<span class="terminal-result">[doc]</span> .trellis/spec/backend/callbacks.md
+Every callback carries an idempotency key…
+<span class="terminal-comment">ref: &lt;ref-from-recall&gt;</span></pre></div><div role="tabpanel" id="panel-2" aria-labelledby="step-2" tabindex="0" hidden><pre><span class="terminal-comment"># Expand the source when you need more</span>
+<span class="terminal-prompt">$</span> mini-trellis mem read "&lt;ref-from-recall&gt;"
 
-{: .highlight }
-Current release is [v0.3.8](/releases/v0.3.8/) (2026-11-11). Adds Kiro and OMP, fixes Pi arguments and refresh manifests, and refreshes the current project after upgrade. [Run refresh after your first upgrade](/upgrade/).
-
-```bash
-npm install -g mini-trellis
+Apply the current rule, verify the change,
+and update the same note.</pre></div></div><div class="source-note"><div class="note-path"><span aria-hidden="true">↳</span> .trellis/spec/backend/callbacks.md</div><h2>Callback idempotency</h2><p>Every callback carries an idempotency key. Repeated delivery returns the first result.</p><div class="note-footer"><span class="status-dot"></span>Project convention · Versioned with code</div></div></div>
+</section>
+<section class="continuity section-wrap"><div class="section-heading"><div><p class="eyebrow">01 / CONTINUITY</p><h2>Keep the parts<br>worth using again.</h2></div><p>Code changes. Decisions change with it. Keep the current convention and the reasoning behind it available for the next change.</p></div><ol class="steps"><li><span class="step-number">01</span><h3>Record</h3><p>Update the existing topic. Link this change and its verification from a journal.</p></li><li><span class="step-number">02</span><h3>Recall</h3><p>Search documents and supported local conversations. Start with an excerpt.</p></li><li><span class="step-number">03</span><h3>Revise</h3><p>Use the current rule. Update the source when the decision changes.</p></li></ol></section>
+<section class="repository-section"><div class="section-wrap repository-inner"><div><p class="eyebrow">02 / YOUR REPOSITORY</p><h2>Your documents.<br>In their own place.</h2><p>Keep maintaining your README, docs, and project conventions. Markdown is editable, reviewable, and ready to share through Git.</p><a class="text-link" href="/how-it-works/">See how it works →</a></div><div class="repo-tree"><div class="tree-label">~/your-project</div><pre><span class="tree-muted">├──</span> README.md
+<span class="tree-muted">├──</span> docs/
+<span class="tree-muted">└──</span> .trellis/
+    <span class="tree-muted">├──</span> <span class="tree-accent">spec/</span>       <span class="tree-comment">conventions</span>
+    <span class="tree-muted">├──</span> <span class="tree-accent">research/</span>   <span class="tree-comment">research & sources</span>
+    <span class="tree-muted">└──</span> <span class="tree-accent">workspace/</span>  <span class="tree-comment">session journals</span></pre></div></div></section>
+<section class="get-started section-wrap"><div><p class="eyebrow">03 / GET STARTED</p><h2>Start with one decision worth keeping.</h2><p>Install, record, and find it in a new session.</p><a class="text-link" href="/install/">Get started →</a></div><div class="install-example"><pre><code>npm install -g mini-trellis
 mini-trellis init -u your-name --claude
-```
-
-Node.js ≥ 18.17, Python ≥ 3.9, and Git. Flags and the first `doctor` run are on [Install](/install/). What to write down after that is [Day to day](/using/).
-
-![Conventions, research, and verified fixes stay in project Markdown and get reused later.](/assets/knowledge-en.svg)
-
-## Already have chats to organize?
-
-In [v0.3.6](/releases/v0.3.6/), turn selected sessions or text exports into project knowledge with `mini-trellis-session-insight`. Update the existing document, keep sources and corrections, and recall it in the next chat. See [the example](/using/#turn-selected-chats-into-project-knowledge).
-
-## Where a note goes
-
-| | Path | Put it here when |
-| --- | --- | --- |
-| Spec | `.trellis/spec/` | A later change should still follow this rule. Read that directory's `index.md` first. |
-| Research | `.trellis/research/` | You checked something, including an approach you dropped. Old topics can move under `archive/`. |
-| Journal | `.trellis/workspace/<you>/` | You want the files touched in this session, and whether the check passed. |
-| Transcripts | the agent's local session store | You need the conversation itself. `mem recall` reads it where it already is. |
-
-mini-trellis does not create a task directory and does not advance a phase list. Planning, editing, and review stay with you.
-
-## Compared with other ways of keeping context
-
-| | `CLAUDE.md` by hand | Vector DB / RAG memory | Phase-gated workflow (Trellis) | mini-trellis |
-| --- | --- | --- | --- | --- |
-| Startup and each turn | The file grows and is loaded every session | Depends on the plugin; indexing and network add latency | ~8.6k characters at startup, plus per-turn state, plus sub-agent re-injection | ~1.1k-character memory entry, no per-turn workflow payload |
-| How a spec is loaded | The whole file, relevant or not | Similarity chunks; an exact constraint is easy to miss | Sub-agents re-read specs from a cold start | `mem recall` returns an excerpt; `mem read` opens the rest |
-| Past chats | Gone when the window closes | Chats have to be copied into the store | Task-directory artifacts | Claude, Codex, OpenCode V1, and Pi sessions are searched in place |
-| When a rule changes | Edit by hand; old lines tend to stay | Old and new decisions sit in the same index | Notes are spread across archived task folders | A `superseded` note points at the current one, and recall prefers the current one |
-| What you run | A file, no search | A database, embeddings, and API keys | Phase gates and sub-agent templates | Git Markdown and a small CLI |
-
-## v0.3.1 measured comparison
-
-On Claude Code 2.1.306, the same project, the same `.trellis` knowledge, and the same model, mini-trellis v0.3.1 against Trellis v0.7.0-beta.4: across 6 tasks × 3 runs, total wall time was 38.4% lower and processed tokens were 40.1% lower. Processed tokens include cache reads. The task list is in the [v0.3.1 notes](/releases/v0.3.1/).
+mini-trellis doctor</code></pre><p>Node.js ≥ 18.17 · Python ≥ 3.9 · Git</p></div></section>
+<section class="platforms section-wrap"><h2>Continue in the agent you use</h2><ul><li>Claude Code</li><li>Codex</li><li>Cursor</li><li>OpenCode</li><li>Pi</li><li>OMP</li><li>Kiro</li><li>DeepSeek Harness</li><li>CodeBuddy</li><li>ZCode</li></ul><a class="text-link" href="/agents/">Explore platform setup and capabilities →</a></section>
+<section class="guides section-wrap"><div class="section-heading compact"><h2>From first use to everyday work</h2><a class="text-link" href="/docs/">All documentation →</a></div><div class="guide-links"><a href="/install/"><span class="guide-arrow" aria-hidden="true">↗</span><h3>Get started</h3><p>Install and save your first decision</p></a><a href="/history/"><span class="guide-arrow" aria-hidden="true">↗</span><h3>Organize history</h3><p>From conversations to project docs</p></a><a href="/commands/"><span class="guide-arrow" aria-hidden="true">↗</span><h3>Command reference</h3><p>Options, skills, and configuration</p></a><a href="/troubleshooting/"><span class="guide-arrow" aria-hidden="true">↗</span><h3>Troubleshooting</h3><p>Find the next step from the symptom</p></a></div></section><section class="home-faq section-wrap"><div><p class="eyebrow">FAQ</p><h2>A few useful answers</h2><a class="text-link" href="/faq/">Read the full FAQ →</a></div><div><details><summary>Can I use my existing README and AGENTS.md?<span aria-hidden="true">+</span></summary><p>Yes. Keep maintaining the documents where they belong. mini-trellis adds retrieval and helps the agent update topics and record useful conclusions.</p></details><details><summary>Should I save every conversation?<span aria-hidden="true">+</span></summary><p>Save decisions, research, and fixes that will help a later change. Use session-insight to organize selected historical conversations into project documents.</p></details><details><summary>Which local conversations can I search?<span aria-hidden="true">+</span></summary><p>v{{ site.data.docs.version }} reads native Claude Code, Codex, OpenCode V1, and Pi history. Other supported agents can use project documents or organize a supplied text export.</p></details><details><summary>What is preserved when migrating from Trellis?<span aria-hidden="true">+</span></summary><p>Migration preserves spec, research, and workspace, and organizes old task material under research. Preview the plan and back up custom configuration first. The migration guide explains file handling.</p></details></div></section><section class="benchmark-link section-wrap"><a href="/benchmarks/"><div><h2>Measurements & methods</h2><p>Explore task duration, processed tokens, and injected-character measurements for the tested versions.</p></div><span aria-hidden="true">↗</span></a></section>

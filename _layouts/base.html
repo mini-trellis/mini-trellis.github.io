@@ -1,0 +1,54 @@
+<!doctype html>
+{% assign lang = page.lang | default: 'en' %}
+{% assign home = '/' %}{% if lang == 'zh' %}{% assign home = '/zh/' %}{% endif %}
+{% assign peer = page.lang_peer %}
+{% unless peer %}
+  {% assign peer = '/' %}
+  {% if lang == 'en' %}{% assign peer = '/zh/' %}{% endif %}
+{% endunless %}
+<html lang="{% if lang == 'zh' %}zh-CN{% else %}en{% endif %}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>{% unless page.home %}{{ page.title | escape }} · {% endunless %}mini-trellis</title>
+  <meta name="description" content="{{ page.description | default: site.description | escape }}">
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+  <link rel="alternate" hreflang="{% if lang == 'zh' %}en{% else %}zh-CN{% endif %}" href="{{ peer | absolute_url }}">
+  <link rel="icon" href="{{ '/assets/favicon.svg' | relative_url }}" type="image/svg+xml">
+  <link rel="stylesheet" href="{{ '/assets/site.css' | relative_url }}">
+  <meta property="og:title" content="{{ page.title | escape }} · mini-trellis">
+  <meta property="og:description" content="{{ page.description | default: site.description | escape }}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <script defer src="{{ '/assets/site.js' | relative_url }}"></script>
+</head>
+<body id="top" class="{% if page.home %}home-page{% else %}docs-page{% endif %}" data-lang="{{ lang }}" data-search-url="{{ '/search.json' | relative_url }}">
+  <a class="skip-link" href="#main-content">{% if lang == 'zh' %}跳到正文{% else %}Skip to content{% endif %}</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="{{ home | relative_url }}" aria-label="mini-trellis {% if lang == 'zh' %}首页{% else %}home{% endif %}"><img class="brand-wordmark" src="{{ '/assets/wordmark-light.svg' | relative_url }}" width="184" height="40" alt="mini-trellis"></a>
+      <nav class="top-nav" aria-label="{% if lang == 'zh' %}主导航{% else %}Main navigation{% endif %}">
+        <a class="docs-link{% unless page.home %} selected{% endunless %}" href="{{ home | append: 'docs/' | relative_url }}"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 5v15M12 5C9 3 5 3 2 4v15c3-1 7-1 10 1 3-2 7-2 10-1V4c-3-1-7-1-10 1Z"/></svg>{% if lang == 'zh' %}文档{% else %}Docs{% endif %}</a>
+        <a href="{{ home | append: 'releases/' | relative_url }}">{% if lang == 'zh' %}版本记录{% else %}Releases{% endif %}</a>
+        <a class="github-link" href="https://github.com/Tiger-zzZ/mini-trellis">GitHub <span aria-hidden="true">↗</span></a>
+      </nav>
+      <div class="header-actions">
+        <button class="search-trigger" type="button" data-search-open hidden><span class="search-icon" aria-hidden="true"></span><span class="search-label">{% if lang == 'zh' %}搜索文档{% else %}Search docs{% endif %}</span><kbd>⌘ K</kbd></button>
+        <a class="language-link" href="{{ peer | relative_url }}" lang="{% if lang == 'zh' %}en{% else %}zh-CN{% endif %}">{% if lang == 'zh' %}EN{% else %}中文{% endif %}</a>
+      </div>
+    </div>
+  </header>
+  {{ content }}
+  <footer class="site-footer">
+    <div class="footer-inner"><a class="brand" href="{{ home | relative_url }}"><img class="brand-wordmark" src="{{ '/assets/wordmark-light.svg' | relative_url }}" width="168" height="36" alt="mini-trellis"></a><p>{% if lang == 'zh' %}项目知识，随开发延续。{% else %}Project knowledge, carried forward.{% endif %}</p><div><a href="https://www.npmjs.com/package/mini-trellis">npm</a><span> · </span><a href="https://www.star-history.com/?repos=Tiger-zzZ%2Fmini-trellis&amp;type=date&amp;legend=top-left">Star History</a><span> · </span><a href="https://github.com/Tiger-zzZ/mini-trellis/blob/main/LICENSE">AGPL-3.0</a></div></div>
+  </footer>
+  <dialog id="search-dialog" aria-labelledby="search-heading">
+    <div class="search-heading"><h2 id="search-heading">{% if lang == 'zh' %}搜索文档{% else %}Search documentation{% endif %}</h2><button type="button" data-search-close aria-label="{% if lang == 'zh' %}关闭搜索{% else %}Close search{% endif %}">Esc</button></div>
+    <label class="sr-only" for="search-input">{% if lang == 'zh' %}关键词{% else %}Search terms{% endif %}</label>
+    <input id="search-input" type="search" autocomplete="off" placeholder="{% if lang == 'zh' %}搜索命令、平台或问题…{% else %}Search commands, agents, or questions…{% endif %}">
+    <p id="search-status" role="status" aria-live="polite"></p>
+    <ul id="search-results"></ul>
+  </dialog>
+</body>
+</html>

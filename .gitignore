@@ -1,0 +1,9 @@
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.sass-cache/
+.bundle/
+.local-gems/
+output/
+.playwright-cli/
+.DS_Store

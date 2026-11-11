@@ -1,33 +1,21 @@
 title: mini-trellis
-description: Project memory for AI coding agents. Spec, research, journals, and local transcript search.
-remote_theme: just-the-docs/just-the-docs@v0.12.0
+description: Project knowledge, ready for the next session.
 url: https://mini-trellis.github.io
+baseurl: ""
 permalink: pretty
-color_scheme: mini-trellis
-search_enabled: true
-heading_anchors: true
-defaults:
-  - scope:
-      path: ""
-      type: pages
-    values:
-      has_toc: false
-callouts:
-  highlight:
-    title: v0.3.8
-    color: green
-aux_links:
-  Repository:
-    - https://github.com/Tiger-zzZ/mini-trellis
-  npm:
-    - https://www.npmjs.com/package/mini-trellis
-aux_links_new_tab: true
-gh_edit_link: true
-gh_edit_link_text: Edit this page on GitHub
-gh_edit_repository: https://github.com/mini-trellis/mini-trellis.github.io
-gh_edit_branch: main
-gh_edit_view_mode: tree
-footer_content: 'Released under <a href="https://github.com/Tiger-zzZ/mini-trellis/blob/main/LICENSE">AGPL-3.0</a>. Original Trellis copyright Mindfold LLC.'
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  auto_ids: true
 exclude:
   - README.md
+  - Gemfile
+  - Gemfile.lock
+  - scripts
+  - output
+  - .local-gems
+  - .bundle
+  - vendor
   - build_docs_site.py
