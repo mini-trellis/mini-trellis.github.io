@@ -4,23 +4,20 @@ title: Upgrade
 nav_order: 5
 lang: en
 ---
-# Upgrade
+# Upgrade and refresh
 
-Back up `.trellis/`, `AGENTS.md`, and the configured agent directories before refreshing, including files Git ignores.
+With npm, update the CLI and then refresh this project:
 
 ```bash
-mini-trellis upgrade
-mini-trellis refresh --dry-run
+npm install -g mini-trellis@latest
 mini-trellis refresh
-mini-trellis doctor
 ```
 
-`upgrade` updates the global CLI. `refresh` rewrites managed files you have not edited, and leaves spec, research, and journals in place. `platforms` lists the tools this project was initialized for.
+From mini-trellis 0.3.8 onward, `mini-trellis upgrade` performs both steps for the current initialized project. An upgrade started by 0.3.7 or earlier still needs the manual refresh afterward.
 
-After upgrading, refresh project scripts and skills. Existing OpenCode V1 projects keep their entry. To switch to V2, run `mini-trellis refresh --opencode --opencode-version 2 --dry-run`, review the changes, then repeat without `--dry-run`. Add CodeBuddy with `mini-trellis init --codebuddy -y`.
+Normal updates to recorded templates run directly. When local edits or missing previous-version records cause a content conflict, refresh lists the files and asks once `[y/N]`. Enter `Y` to replace the listed files and complete the update. `N`, Enter or EOF leaves the project unchanged. Shared JSON settings are merged, `AGENTS.md` keeps instructions outside the managed block, and project knowledge stays in place. A missing or damaged manifest can be rebuilt through the same confirmation.
 
-[v0.3.7](/releases/v0.3.7/) adds ZCode and improves multibyte and partial-history reading. Add ZCode to an existing project with `mini-trellis init --zcode -y`, review and trust the project hook in the host, then start a new session. Use [history organizing](/using/#turn-selected-chats-into-project-knowledge) to turn selected sessions and text exports into project docs.
+`refresh --dry-run` previews the changes. For replacements requiring confirmation, `--json` and non-interactive runs report the affected files and return exit code 1; run `mini-trellis refresh` in a terminal to confirm and complete those replacements. Updates without content conflicts complete directly.
 
-`mini-trellis uninstall` removes `.trellis/`, including those notes. Read `mini-trellis uninstall --help` before running it.
 
-A Trellis project should go through [Migrate from Trellis](/migration/) rather than `init` on top of the old files.
+[v0.3.8 release notes](/releases/v0.3.8/). Start a new agent session after refreshing. Run `mini-trellis refresh` separately in other projects.

@@ -17,9 +17,9 @@ lang: zh
 | `mini-trellis init -u <name> --claude` | 建立 `.trellis/` 和宿主文件。只用到的工具就写哪个参数。`-y` 跳过提问。`-f` 覆盖。`-s` 跳过已有文件。不提交。 |
 | `mini-trellis migrate --dry-run` | 列出 Trellis 迁移计划。不写文件。 |
 | `mini-trellis migrate` | 执行迁移。`-y` 把任务文件归档到 `<topic>/legacy/`。 |
-| `mini-trellis upgrade` | 更新全局 CLI。`--dry-run` 只打印 npm 命令。`--tag <tag>` 指定 dist-tag 或版本。 |
-| `mini-trellis refresh --dry-run` | 预览受管文件更新。可用 `--claude`、`--codex`、`--opencode`、`--pi`、`--dsh`、`--cursor`、`--codebuddy`、`--zcode` 限定宿主。 |
-| `mini-trellis refresh` | 重写你没有改过的受管文件。 |
+| `mini-trellis upgrade` | 更新全局 CLI，并自动刷新当前已初始化项目。`--dry-run` 预览两步。`--tag <tag>` 指定 dist-tag 或版本。 |
+| `mini-trellis refresh --dry-run` | 预览受管文件更新。可用 `--claude`、`--codex`、`--opencode`、`--pi`、`--omp`、`--kiro`、`--dsh`、`--cursor`、`--codebuddy`、`--zcode` 限定宿主。 |
+| `mini-trellis refresh` | 更新项目脚本与技能；内容冲突时统一询问 Y/N。 |
 | `mini-trellis doctor` | 检查文件和上一次 hook 结果。`--json` 打同一份报告。 |
 | `mini-trellis platforms` | 列出本项目初始化过的宿主。`--json` 带路径。 |
 | `mini-trellis uninstall --dry-run` | 列出卸载会删什么。 |
@@ -49,7 +49,7 @@ lang: zh
 | --- | --- |
 | Claude Code、OpenCode | `/mini-trellis:remember` |
 | Codex、ZCode | `$mini-trellis-remember` |
-| Pi | `/mini-trellis-remember` |
+| Pi / OMP / Kiro | `/mini-trellis-remember` |
 | Cursor、DeepSeek Harness | `mini-trellis-remember` |
 
 ## 配置
@@ -65,3 +65,5 @@ lang: zh
 | `default_package` | 不设置 | 一条路径对上多个包时用哪一个。 |
 
 OpenCode 的 `init`、`refresh` 和 `migrate` 支持 `--opencode-version 1|2`。新项目默认 V2，普通刷新保留原协议。CodeBuddy 使用 `mini-trellis-remember` 技能；CLI 也支持 `/mini-trellis:remember`。
+
+[Pi / OMP](/zh/using/#pi-and-omp) · [Kiro](/zh/using/#kiro) · [升级与刷新](/zh/upgrade/)

@@ -11,7 +11,7 @@ lang: en
 mini-trellis stores the conventions, research, and session notes you want a later coding session to find. Those files are Markdown in the repo. `mem recall` searches them together with the agent transcripts already on this machine.
 
 {: .highlight }
-Current release is [{{ site.callouts.highlight.title }}](/releases/{{ site.callouts.highlight.title }}/) (2026-11-09). Use project knowledge in ZCode, with shared skills and a startup entry. History reading preserves multibyte characters and reports incomplete records.
+Current release is [v0.3.8](/releases/v0.3.8/) (2026-11-11). Adds Kiro and OMP, fixes Pi arguments and refresh manifests, and refreshes the current project after upgrade. [Run refresh after your first upgrade](/upgrade/).
 
 ```bash
 npm install -g mini-trellis

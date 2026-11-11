@@ -47,6 +47,59 @@ Both interfaces share `.codebuddy/settings.json` and `.codebuddy/skills/` in one
 
 Installation and refresh preserve user hooks, environment, and permissions. Follow CodeBuddy's login and project trust prompts, then start a new chat after configuration. Saved project knowledge is supported; raw CodeBuddy conversation history is not parsed.
 
+<a id="pi-and-omp"></a>
+
+## Pi and OMP
+
+Use mini-trellis 0.3.8 or later. Choose the host you run:
+
+```bash
+# Pi
+mini-trellis init -u your-name --pi -y
+pi
+
+# Oh My Pi (OMP)
+mini-trellis init -u your-name --omp -y
+omp
+```
+
+Run these commands from the project root. Pi uses `.pi/extensions/` and `.pi/prompts/`, with shared skills under `.agents/skills/`. OMP uses its native `.omp/extensions/`, `.omp/prompts/` and `.omp/skills/`. Both load the same short memory entry through `before_agent_start`; OMP discovers the installed assets automatically. To use both in one project, initialize with `--pi --omp`.
+
+For an existing mini-trellis project, update its host assets with the new CLI:
+
+```bash
+mini-trellis refresh --pi
+# Add or update OMP in the same project:
+mini-trellis refresh --omp
+```
+
+Review Pi's project trust prompt, then start a new host session after installing or refreshing. Keep your model configured in Pi or OMP as usual. In the chat, either record the discussion with `/mini-trellis-remember` or supply the confirmed conclusion directly:
+
+```text
+/mini-trellis-remember Only idempotent callbacks auto-retry, at most 3 times; the first delay is 427 ms. Non-idempotent callbacks require manual handling.
+```
+
+The agent updates the existing topic, reads it back, then writes a journal entry linking to it. In a later session, ask the agent for the callback retry rule, or run `mini-trellis mem recall "callback retry"` in a terminal. `mini-trellis-session-insight` can organize a supplied Markdown/text export into the existing project documents; `mini-trellis-update-spec` maintains lasting contracts. Ask for either skill by name in the chat.
+
+Pi local conversation history is searchable. OMP recall uses saved project Markdown; to organize an OMP conversation, supply a Markdown/text export. See the official [Pi prompt template](https://github.com/earendil-works/pi/blob/main/packages/coding-agent/docs/prompt-templates.md) and [OMP discovery](https://github.com/can1357/oh-my-pi/blob/v18.18.3/docs/extension-loading.md) documentation.
+
+<a id="kiro"></a>
+
+## Kiro
+
+Use Kiro CLI V3 or IDE 1.x with standalone project hooks:
+
+```bash
+mini-trellis init -u your-name --kiro -y
+kiro-cli chat --v3
+```
+
+Open the project and accept Kiro's workspace trust prompt. `.kiro/hooks/mini-trellis.json` registers SessionStart, and `.kiro/skills/` contains remember, session-insight and update-spec. Start a new session to load the short project entry; use `/mini-trellis-remember` to save a confirmed decision and `mini-trellis mem recall <query>` to retrieve it later. After compact, use the saved project notes through `AGENTS.md` and recall.
+
+`refresh --kiro` updates installed assets, and `doctor` checks registration and the latest execution. Existing Trellis projects use `mini-trellis migrate` to replace their Trellis skills, agents and workflow hook with this project entry. Kiro uses the [current standalone hook format](https://kiro.dev/docs/hooks/) and [Agent Skills](https://kiro.dev/docs/skills/).
+
+<a id="zcode-zai"></a>
+
 ## ZCode (Z.ai)
 
 Install the three project skills under `.agents/skills/`, shared with Codex, and a SessionStart hook in `.zcode/config.json`:

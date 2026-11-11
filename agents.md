@@ -18,6 +18,8 @@ Pass one flag or several (`mini-trellis init -u your-name --claude --cursor`):
 | **DeepSeek Harness** | `--dsh` | `mini-trellis-remember` | Installs `.dsh/skills/`; no project `SessionStart` hook—the model calls `mem recall` / `mem read` when needed |
 | **CodeBuddy CLI / IDE** | `--codebuddy` | `mini-trellis-remember`; CLI also `/mini-trellis:remember` | Shared project settings, skills and startup entry; project knowledge recall |
 | **ZCode (Z.ai)** | `--zcode` | `$mini-trellis-remember` or the skill | Project startup entry, recording and cross-session recall; shared skills with Codex. Organizes supplied Markdown/text |
+| **Oh My Pi (OMP)** | `--omp` | `/mini-trellis-remember` | Native extension, prompts and skills; project knowledge recall |
+| **Kiro CLI V3 / IDE 1.x** | `--kiro` | `/mini-trellis-remember` | Project skills, startup entry, recording and recall |
 
 In ZCode Desktop, review and trust the project hook in **Settings → Hooks**, then start a new session. See [setup and daily use](/using/#zcode-zai).
 
@@ -37,3 +39,5 @@ In ZCode Desktop, review and trust the project hook in **Settings → Hooks**, t
 </details>
 
 ---
+
+[Pi / OMP](/using/#pi-and-omp) · [Kiro](/using/#kiro) · [Upgrade and refresh](/upgrade/)

@@ -8,8 +8,9 @@ lang_peer: /zh/releases/
 ---
 # Releases
 
-The current release is [v0.3.7](/releases/v0.3.7/). The wall-time comparison with Trellis is still [v0.3.1](/releases/v0.3.1/). Per-run numbers are in [Benchmark detail](/releases/benchmark-detail/).
+The current release is [v0.3.8](/releases/v0.3.8/). The wall-time comparison with Trellis is still [v0.3.1](/releases/v0.3.1/). Per-run numbers are in [Benchmark detail](/releases/benchmark-detail/).
 
+- [v0.3.8](/releases/v0.3.8/)
 - [v0.3.7](/releases/v0.3.7/)
 - [v0.3.6](/releases/v0.3.6/)
 - [v0.3.5](/releases/v0.3.5/)

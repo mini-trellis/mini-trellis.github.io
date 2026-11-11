@@ -5,23 +5,20 @@ parent: mini-trellis
 nav_order: 10
 lang: zh
 ---
-# 升级
+# 升级与刷新
 
-`refresh` 之前先备份 `.trellis/`、`AGENTS.md` 和已配置的 Agent 目录，包括被 Git 忽略的文件。
+通过 npm 更新时，先安装新版 CLI，再刷新当前项目：
 
 ```bash
-mini-trellis upgrade
-mini-trellis refresh --dry-run
+npm install -g mini-trellis@latest
 mini-trellis refresh
-mini-trellis doctor
 ```
 
-`upgrade` 更新全局 CLI。`refresh` 重写你没有改过的受管文件，规范、调研和日志留在原地。`platforms` 列出这个项目初始化过的工具。
+从 mini-trellis 0.3.8 开始，`mini-trellis upgrade` 会在当前已初始化项目中完成这两步。从 0.3.7 或更早版本启动的升级，仍需随后手动执行一次 refresh。
 
-升级后刷新项目脚本与技能。已有 OpenCode V1 项目保留原入口；切换到 V2 时先运行 `mini-trellis refresh --opencode --opencode-version 2 --dry-run`，确认后去掉 `--dry-run`。新增 CodeBuddy 使用 `mini-trellis init --codebuddy -y`。
+已记录的旧模板正常更新时直接完成。本地改动或缺失旧版本记录导致内容冲突时，refresh 列出文件并统一询问 `[y/N]`。输入 `Y` 覆盖列出的文件并完成更新；输入 `N`、直接回车或遇到 EOF，项目保持原样。共享 JSON 配置按结构合并，`AGENTS.md` 保留托管区块之外的说明，项目知识继续保留。清单缺失或损坏时，也可通过同一次确认重新生成。
 
-[v0.3.7](/zh/releases/v0.3.7/) 新增 ZCode 接入，并改进中文与截断历史读取。已有项目运行 `mini-trellis init --zcode -y` 添加 ZCode，在宿主中审查并信任项目 hook 后开启新会话。选定会话与文本导出可继续通过[历史整理](/zh/using/#把选定聊天整理成项目知识)写入项目文档。
+`refresh --dry-run` 预览更新。需要确认覆盖时，`--json` 或非交互运行会列出相关文件并返回退出码 1；在终端运行 `mini-trellis refresh` 即可确认并完成这些更新。没有内容冲突的更新直接完成。
 
-`mini-trellis uninstall` 会删掉整个 `.trellis/`，里面的笔记也一起删。先看 `mini-trellis uninstall --help`。
 
-Trellis 项目走[从 Trellis 迁移](/zh/migration/)，不要在旧文件上再跑一遍 `init`。
+[v0.3.8 版本说明](/zh/releases/v0.3.8/)。刷新后开启新的 Agent 会话。其他项目按需分别运行 `mini-trellis refresh`。

@@ -47,6 +47,60 @@ mini-trellis init -u your-name --codebuddy -y
 
 安装和刷新保留用户 hook、环境与权限。在 CodeBuddy 中按提示完成登录和项目信任，配置后开启新会话。支持已保存的项目知识，不解析 CodeBuddy 原始对话历史。
 
+
+<a id="pi-and-omp"></a>
+
+## Pi 和 OMP
+
+使用 mini-trellis 0.3.8 或更新版本，按实际宿主选择：
+
+```bash
+# Pi
+mini-trellis init -u your-name --pi -y
+pi
+
+# Oh My Pi（OMP）
+mini-trellis init -u your-name --omp -y
+omp
+```
+
+在项目根目录执行。Pi 使用 `.pi/extensions/`、`.pi/prompts/` 和共享的 `.agents/skills/`；OMP 使用原生 `.omp/extensions/`、`.omp/prompts/`、`.omp/skills/`。两者通过 `before_agent_start` 加载同一份简短记忆入口，OMP 会自动发现安装的资源。同一项目使用两者时，初始化加上 `--pi --omp`。
+
+已有 mini-trellis 项目，使用新版本 CLI 更新宿主资源：
+
+```bash
+mini-trellis refresh --pi
+# 在同一项目添加或更新 OMP：
+mini-trellis refresh --omp
+```
+
+Pi 按宿主提示确认项目信任，安装或刷新后新开宿主会话。模型沿用各宿主的常规配置。在对话中可单独运行 `/mini-trellis-remember` 整理本次讨论，也可直接附上确认结论：
+
+```text
+/mini-trellis-remember 仅幂等回调自动重试，最多 3 次，首次延迟 427ms；非幂等回调需手动处理。
+```
+
+Agent 更新已有主题并回读核对，再写入带主题链接的 journal。下次会话直接询问“项目的回调重试规则是什么”，或在终端运行 `mini-trellis mem recall "回调重试"`。需要整理 Markdown/text 对话导出时，在对话中要求使用 `mini-trellis-session-insight`；维护长期约定时要求使用 `mini-trellis-update-spec`。
+
+Pi 支持检索本地原始会话；OMP 的召回读取已保存的项目 Markdown，整理 OMP 对话时提供 Markdown/text 导出。宿主机制参考官方 [Pi 提示模板](https://github.com/earendil-works/pi/blob/main/packages/coding-agent/docs/prompt-templates.md)与 [OMP 资源发现](https://github.com/can1357/oh-my-pi/blob/v18.18.3/docs/extension-loading.md)。
+
+<a id="kiro"></a>
+
+## Kiro
+
+使用支持独立项目 Hook 的 Kiro CLI V3 或 IDE 1.x：
+
+```bash
+mini-trellis init -u 你的名字 --kiro -y
+kiro-cli chat --v3
+```
+
+打开项目并按 Kiro 提示信任工作区。`.kiro/hooks/mini-trellis.json` 注册 SessionStart，`.kiro/skills/` 提供 remember、session-insight、update-spec 三项技能。新会话载入简短项目入口；用 `/mini-trellis-remember` 保存已确认结论，后续通过 `mini-trellis mem recall <关键词>` 召回。compact 后通过 `AGENTS.md` 和 recall 继续读取已保存的项目知识。
+
+`refresh --kiro` 更新项目资产，`doctor` 检查注册与最近执行。已有 Trellis 项目使用 `mini-trellis migrate`，将 Trellis 技能、Agent 配置和流程 Hook 替换为此项目入口。接入采用 Kiro 当前的[独立 Hook 格式](https://kiro.dev/docs/hooks/)与 [Agent Skills](https://kiro.dev/docs/skills/)。
+
+
+
 <a id="zcode-zai"></a>
 
 ## ZCode（智谱/Z.ai）

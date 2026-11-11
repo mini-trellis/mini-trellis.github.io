@@ -11,7 +11,7 @@ lang: zh
 mini-trellis 把下次会话还要找的约定、调研和开发记录写进仓库里的 Markdown。`mem recall` 同时查这些文件和这台机器上已有的 Agent 对话，先返回短摘录。
 
 {: .highlight }
-当前版本是 [{{ site.callouts.highlight.title }}](/zh/releases/{{ site.callouts.highlight.title }}/)（2026-11-09）。在 ZCode 中使用共享技能与启动入口，记录并找回项目知识。历史读取保留完整中文字符，并提示截断记录。
+当前版本是 [v0.3.8](/zh/releases/v0.3.8/)（2026-11-11）。新增 Kiro 与 OMP 支持，修复 Pi 参数传递与刷新清单，upgrade 自动刷新当前项目。[首次升级后手动 refresh](/zh/upgrade/)。
 
 ```bash
 npm install -g mini-trellis

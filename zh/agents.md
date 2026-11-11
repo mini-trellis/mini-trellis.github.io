@@ -19,6 +19,8 @@ lang: zh
 | **DeepSeek Harness** | `--dsh` | `mini-trellis-remember` | 安装 `.dsh/skills/`，无项目级 `SessionStart`，由模型按需调用 `mem recall` / `mem read` |
 | **CodeBuddy CLI / IDE** | `--codebuddy` | `mini-trellis-remember`；CLI 也可 `/mini-trellis:remember` | 共用项目配置、技能和启动入口，支持项目知识检索 |
 | **ZCode（智谱/Z.ai）** | `--zcode` | `$mini-trellis-remember` 或同名技能 | 项目启动入口、知识记录与跨会话召回；与 Codex 共用技能。历史整理使用提供的 Markdown/文本 |
+| **Oh My Pi (OMP)** | `--omp` | `/mini-trellis-remember` | 原生扩展、提示和技能；项目知识召回 |
+| **Kiro CLI V3 / IDE 1.x** | `--kiro` | `/mini-trellis-remember` | 项目技能、启动入口、记录与跨会话召回 |
 
 ZCode 桌面版在「设置 → 钩子」审查并信任项目 hook 后开启新会话，见[配置与日常使用](/zh/using/#zcode-zai)。
 
@@ -38,3 +40,5 @@ ZCode 桌面版在「设置 → 钩子」审查并信任项目 hook 后开启新
 </details>
 
 ---
+
+[Pi / OMP](/zh/using/#pi-and-omp) · [Kiro](/zh/using/#kiro) · [升级与刷新](/zh/upgrade/)

@@ -16,9 +16,9 @@ Run these from the project root. `mini-trellis mem help` prints the full flag li
 | `mini-trellis init -u <name> --claude` | Create `.trellis/` and the host files. Add only the tools you use. `-y` skips prompts. `-f` overwrites. `-s` skips existing files. Does not commit. |
 | `mini-trellis migrate --dry-run` | Show the Trellis migration plan. Does not write. |
 | `mini-trellis migrate` | Apply it. `-y` archives task files under `<topic>/legacy/`. |
-| `mini-trellis upgrade` | Update the global CLI. `--dry-run` prints the npm command. `--tag <tag>` picks a dist-tag or version. |
-| `mini-trellis refresh --dry-run` | Preview managed-file updates. Pass `--claude`, `--codex`, `--opencode`, `--pi`, `--dsh`, `--cursor`, `--codebuddy`, or `--zcode` to limit the host. |
-| `mini-trellis refresh` | Rewrite managed files you have not edited. |
+| `mini-trellis upgrade` | Update the global CLI and refresh the current initialized project. `--dry-run` previews both steps. `--tag <tag>` picks a dist-tag or version. |
+| `mini-trellis refresh --dry-run` | Preview managed-file updates. Pass `--claude`, `--codex`, `--opencode`, `--pi`, `--omp`, `--kiro`, `--dsh`, `--cursor`, `--codebuddy`, or `--zcode` to limit the host. |
+| `mini-trellis refresh` | Update project scripts and skills; confirm content conflicts once with Y/N. |
 | `mini-trellis doctor` | Check files and the last hook result. `--json` prints the same report. |
 | `mini-trellis platforms` | List hosts initialized in this project. `--json` for the paths. |
 | `mini-trellis uninstall --dry-run` | List what uninstall would remove. |
@@ -48,7 +48,7 @@ Doctor checks are listed on [Day to day](/using/#when-something-looks-wrong).
 | --- | --- |
 | Claude Code, OpenCode | `/mini-trellis:remember` |
 | Codex, ZCode | `$mini-trellis-remember` |
-| Pi | `/mini-trellis-remember` |
+| Pi / OMP / Kiro | `/mini-trellis-remember` |
 | Cursor, DeepSeek Harness | `mini-trellis-remember` |
 
 ## Config
@@ -64,3 +64,5 @@ Doctor checks are listed on [Day to day](/using/#when-something-looks-wrong).
 | `default_package` | unset | Package used when a path matches more than one. |
 
 OpenCode `init`, `refresh`, and `migrate` accept `--opencode-version 1|2`. New projects default to V2; ordinary refresh preserves the installed protocol. CodeBuddy uses the `mini-trellis-remember` skill; CLI also supports `/mini-trellis:remember`.
+
+[Pi / OMP](/using/#pi-and-omp) · [Kiro](/using/#kiro) · [Upgrade and refresh](/upgrade/)
