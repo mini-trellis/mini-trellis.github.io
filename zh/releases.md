@@ -9,8 +9,9 @@ lang: zh
 
 # 版本说明
 
-当前版本是 [v0.4.0](/zh/releases/v0.4.0/)。和 Trellis 的耗时对比仍是 [v0.3.1](/releases/v0.3.1/)。每次运行的数字在 [评测详情](/releases/benchmark-detail/)。
+当前版本是 [v0.4.1](/zh/releases/v0.4.1/)。和 Trellis 的耗时对比仍是 [v0.3.1](/releases/v0.3.1/)。每次运行的数字在 [评测详情](/releases/benchmark-detail/)。
 
+- [v0.4.1](/zh/releases/v0.4.1/)
 - [v0.4.0](/zh/releases/v0.4.0/)
 - [v0.3.8](/zh/releases/v0.3.8/)
 - [v0.3.7](/zh/releases/v0.3.7/)

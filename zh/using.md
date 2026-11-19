@@ -83,6 +83,8 @@ mini-trellis mem read "<ref-from-recall>"
 <a id="kiro"></a>
 [Kiro 配置](/zh/agents/#kiro)
 
+[Antigravity 配置](/zh/agents/#antigravity)
+
 <a id="升级与刷新"></a>
 [升级与刷新](/zh/upgrade/)
 
