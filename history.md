@@ -15,13 +15,15 @@ Use the `mini-trellis-session-insight` skill to turn a selected conversation or 
 
 ## Choose the source
 
-Native history readers support Claude Code, Codex, OpenCode V1, and Pi. List sessions in the current project and copy the full ID from JSON:
+Native history readers support Claude Code, Codex, OpenCode V1, Pi, and Factory Droid. List sessions in the current project and copy the full ID from JSON:
 
 ```bash
 mini-trellis mem list --platform claude --json --limit 10
 ```
 
 For other agents, provide a Markdown or plain-text export. See [Agent setup](/agents/#capabilities) for supported sources.
+
+Droid 1.17.0 saves a rewind as a new session with its own ID. Searches can match the original session, the fork, or both when they share the same text. To review the conversation after a rewind, select the new session ID.
 
 ## Ask for a focused review
 

@@ -15,13 +15,15 @@ source_path: "docs/history_CN.md"
 
 ## 选择材料
 
-原始历史读取支持 Claude Code、Codex、OpenCode V1 和 Pi。在当前项目列出会话，从 JSON 结果复制完整 ID：
+原始历史读取支持 Claude Code、Codex、OpenCode V1、Pi 和 Factory Droid。在当前项目列出会话，从 JSON 结果复制完整 ID：
 
 ```bash
 mini-trellis mem list --platform claude --json --limit 10
 ```
 
 其他 Agent 可以提供 Markdown 或纯文本导出。来源支持情况见 [Agent 配置](/zh/agents/#capabilities)。
+
+Droid 1.17.0 回退时会创建有独立 ID 的新会话。搜索可以命中原会话和新会话，共有的开头可能出现两次。整理回退后的对话时，请选择新会话的 ID。
 
 ## 提出明确的整理请求
 

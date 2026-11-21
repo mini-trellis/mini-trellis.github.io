@@ -30,7 +30,7 @@ Illustrative output:
   Transient failures receive at most four total attempts, including the first.
 ```
 
-Copy the actual `ref` from your output. References encode source locations, and a later read can report that the source changed. A `superseded` result points to its replacement; see [changed decisions](/writing-notes/#changed-decisions).
+Copy the actual `ref` from your output. One document hit can show two matching sections with source line numbers. `read` expands both from the same reference and reports a changed source. Excerpts from nested Markdown sections include the enclosing headings and as much of their introduction as the budget allows. Archive and supersession labels carry through to `read`. See [changed decisions](/writing-notes/#changed-decisions).
 
 <a id="sources"></a>
 ## Document sources
@@ -44,11 +44,11 @@ Copy the actual `ref` from your output. References encode source locations, and 
 
 Ordinary documents respect `.gitignore`. Runtime files, scripts, secret-like filenames, and dependency/build directories are excluded. Discovery has file, size, depth, and time limits. Warnings and `incomplete` identify a partial search.
 
-The local transcript readers cover Claude Code, Codex, OpenCode V1, and Pi. Platform support is listed in [Agent setup](/agents/#capabilities).
+The local transcript readers cover Claude Code, Codex, OpenCode V1, Pi, and Factory Droid. Platform support is listed in [Agent setup](/agents/#capabilities).
 
 ## Choose a useful query
 
-Use terms or identifiers present in the source, such as `callback retries`, an API name, or a filename. If a broad query is unhelpful, use a distinctive term from the module. A current note containing the answer can rank ahead of an archived note that mainly matches the title. Explicit paths and identifiers remain useful for finding older material.
+Use terms or identifiers present in the source, such as `callback retries`, an API name, or a filename. If a broad query is unhelpful, use a distinctive term from the module. For a Chinese query typed without spaces, a note with overlapping words in its body can rank ahead of an exact title match. Match strength describes lexical coverage. Use the excerpt's conditions and source status to decide whether a rule applies. Explicit paths and identifiers remain useful for finding older material.
 
 ## Locate a conversation
 
@@ -65,7 +65,7 @@ Session commands default to the current project. Use `--cwd /path/to/project` to
 <a id="compact"></a>
 ## After compact
 
-For Claude Code and Codex, the compact handoff can include the current session ID. Run the command it provides with the matching platform:
+For Claude Code, Codex, and Factory Droid, the compact handoff can include the current session ID. Run the command it provides with the matching platform:
 
 ```bash
 mini-trellis mem context <full-session-id> --platform codex
